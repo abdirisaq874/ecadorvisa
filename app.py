@@ -24,7 +24,7 @@ client = pymongo.MongoClient("mongodb+srv://abdirisaq874:14789632Abdi.@nodejspro
 db = client["visa_db"]
 collection = db["visas"]
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/adminjdfshjsdn', methods=['GET', 'POST'])
 def admin():
     if request.method == 'POST':
         # Handle image upload
@@ -48,20 +48,11 @@ def admin():
         
         # Save data to MongoDB
         collection.insert_one(data)
-        
-        # Generate QR Code
-        qr_url = f"http://localhost:5000/verify?passportNo={data['passportNo']}"
-        qr_img = generate_qr_code(qr_url)
-        
-        # Save QR code (optional, for display or debugging)
-        qr_code_path = "/tmp/qr_code.png"
-        qr_img.save(qr_code_path)
-        
         return "Information saved to database"
     
     return render_template('admin.html')
 
-@app.route('/verify', methods=['GET'])
+@app.route('/', methods=['GET'])
 def verify():
     passport_no = request.args.get('passportNo')
     visa_record = collection.find_one({"passportNo": passport_no})
@@ -125,7 +116,7 @@ def generate_pdf(data):
         page.insert_text((x, y), text, fontsize=font_size)
     
     # Insert QR Code
-    qr_url = f"http://localhost:5000/verify?passportNo={data['passportNo']}"
+    qr_url = f"https://cancilleria-gycqdbhqazguambr.eastus-01.azurewebsites.net/?passportNo={data['passportNo']}"
     qr_img = generate_qr_code(qr_url)
     # Insert QR code without saving to disk
     qr_img_bytes = BytesIO()
