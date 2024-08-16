@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin - Enter Visa Information</title>
+  </head>
+  <body>
+    <h1>Enter Visa Information</h1>
+    <form method="post" action="/" enctype="multipart/form-data">
+      <label for="place_of_issue">Place of Issue:</label><br />
+      <input
+        type="text"
+        id="place_of_issue"
+        name="place_of_issue"
+        required
+      /><br /><br />
+
+      <label for="valid_from">Valid From:</label><br />
+      <input
+        type="text"
+        id="valid_from"
+        name="valid_from"
+        required
+      /><br /><br />
+
+      <label for="valid_until">Valid Until:</label><br />
+      <input
+        type="text"
+        id="valid_until"
+        name="valid_until"
+        required
+      /><br /><br />
+
+      <label for="document_no">Document Number:</label><br />
+      <input
+        type="text"
+        id="document_no"
+        name="document_no"
+        required
+      /><br /><br />
+
+      <label for="fullName">Full Name:</label><br />
+      <input type="text" id="fullName" name="fullName" required /><br /><br />
+
+      <label for="passportNo">Passport Number:</label><br />
+      <input
+        type="text"
+        id="passportNo"
+        name="passportNo"
+        required
+      /><br /><br />
+
+      <label for="sex">Sex:</label><br />
+      <input type="text" id="sex" name="sex" required /><br /><br />
+
+      <label for="birth_date">Birth Date:</label><br />
+      <input
+        type="text"
+        id="birth_date"
+        name="birth_date"
+        required
+      /><br /><br />
+
+      <label for="nationality">Nationality:</label><br />
+      <input
+        type="text"
+        id="nationality"
+        name="nationality"
+        required
+      /><br /><br />
+
+      <label for="image">User Image:</label><br />
+      <input
+        type="file"
+        id="image"
+        name="image"
+        accept="image/*"
+        required
+      /><br /><br />
+
+      <button type="submit">Save Information</button>
+    </form>
+  </body>
+</html>
