@@ -100,19 +100,23 @@ def generate_pdf(data):
     # Set text properties
     font_size = 6
     text_positions = {
-        "place_of_issue": (222, 218, data["place_of_issue"]),
-        "valid_from": (345, 218, data["valid_from"]),
-        "valid_until": (439, 218, data["valid_until"]),
-        "document_no": (419, 234, data["document_no"]),
-        "fullName": (222, 273, data["fullName"]),
-        "passportNo": (222, 294, data["passportNo"]),
-        "sex": (321, 294, data["sex"]),
-        "birth_date": (371, 296, data["birth_date"]),
-        "nationality": (445, 294, data["nationality"])
+        "place_of_issue": (222, 218, data["place_of_issue"],6),
+        "valid_from": (345, 218, data["valid_from"],6),
+        "valid_until": (439, 218, data["valid_until"],6),
+        "document_no": (419, 234, data["document_no"],6),
+        "document_no1": (59, 117, data["document_no"],7),
+        "document_no2": (502, 134, data["document_no"],7),
+        "fullName": (222, 273, data["fullName"],6),
+        "passportNo": (222, 294, data["passportNo"],6),
+        "sex": (321, 294, data["sex"],6),
+        "birth_date": (371, 296, data["birth_date"],6),
+        "nationality": (445, 294, data["nationality"],6),
+        "visa": (109, 763, data["document_no"],8),
+        "passport": (431, 765, data["passportNo"],8),
     }
     
     # Insert text
-    for key, (x, y, text) in text_positions.items():
+    for key, (x, y, text,font_size) in text_positions.items():
         page.insert_text((x, y), text, fontsize=font_size)
     
     # Insert QR Code
