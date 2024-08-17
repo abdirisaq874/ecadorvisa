@@ -1,0 +1,578 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>MREMH</title>
+    <link href="/Content/css?v=u65qFVrCll2jGiXrwCjSpnjFTKu4xwRPQ4k12icEO8A1" rel="stylesheet"/>
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+
+    <!--This bundle was moved by the Telerik VS Extensions for compatibility reasons-->
+    <script src="/bundles/jquery?v=8kmHc-ukmg3rp-jj2rNMjYYIG_lP3ErMNtowPG93XbM1"></script>
+
+    <link href="/Content/kendo/2018.1.221/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/Content/kendo/2018.1.221/kendo.mobile.all.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/Content/kendo/2018.1.221/kendo.blueopal.min.css" rel="stylesheet" type="text/css"/>
+    <script src="/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="/Scripts/kendo/2018.1.221/jszip.min.js"></script>
+    <script src="/Scripts/kendo/2018.1.221/kendo.all.min.js"></script>
+    <script src="/Scripts/kendo/2018.1.221/kendo.aspnetmvc.min.js"></script>
+    <script src="/Scripts/kendo.modernizr.custom.js"></script>
+
+    <script src="/Scripts/ViewScripts/utils.js"></script>
+    <script src="/Scripts/ViewScripts/jquery.blockUI.js"></script>
+    <script src="/Scripts/kendo/2018.1.221/cultures/kendo.culture.es-ES.min.js"></script>
+
+    <link href="/Content/sites.css" rel="stylesheet" type="text/css"/>
+    <link href="/Content/utils.css" rel="stylesheet" type="text/css"/>
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="/Scripts/kendo.modernizr.custom.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            kendo.culture("es-ES");
+        });
+
+        $(function () {
+            $("form").kendoValidator();
+        });
+    </script>
+    <style>
+
+        .text-right a img {
+            width: 4.5vh;
+        }
+
+        #aTerminos {
+            text-decoration: none;
+            color: white;
+            font-weight:bold;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 5px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #divTerminos {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-left: 0.5vw;
+            margin-top:-65px;
+        }
+        .text-left, .text-right {
+            height: 100%;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        #divSocialIcons {
+            margin-top: 1.5vh;
+        }
+       
+        @media only screen and (max-width: 768px) {
+            
+            .text-left {
+                text-align: center;
+                margin-top:0vh;
+            }
+            .text-right {
+                text-align: right;                
+            }
+            
+            #divTerminos {
+                padding: 10px;
+                text-align: center;
+                margin-top: 0;
+            }
+
+            #divSocialIcons {
+                margin-top: 10px;
+                text-align: right;
+                margin-right:2vh;
+            }
+
+        @media only screen and (max-width: 480px) {
+            .spnTitulo {
+                font-size: x-large;
+            }
+            #divTerminos {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                padding-left: 0.5vw;
+                margin-top: -85px;
+            }
+           
+        }
+    </style>
+</head>
+<body>
+
+    <div id="divPaginaPrincipal" name="divPaginaPrincipal" style="overflow-y: hidden; background-color: #002041">
+
+        <div class="encabezado">
+            <table style="width: 100%; height: 100%; border: 0;">
+                <tr style="height: 75%">
+                    
+                    <td style="width: 88.89%;">
+                        <table style="width: 100%; height: 100%;">
+                            <tr style="height: 100%">
+                                <td>
+                                    <table style="width: 100%; height: 100%;">
+                                        <tr>
+                                            <!--<td width="50%" style="text-align: center; color: white;"><img src="~/Content/imagenes/logo_eVisaEcuador.png" style="height:14vh;"/></td>-->
+                                            <td id="tdTitulo" name="tdTitulo" width="50%" 
+                                                style="text-align:center; vertical-align:middle; color: white; font-family: Arial; font-weight: bold; font-size: xx-large">
+                                                <span class="spnTitulo">CONSULTA DE SERVICIOS CIUDADANOS</span>                                                                                  
+                                            </td>                                           
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="divBody" name="divBody" class="container body-content" style="height: 76vh; min-height: 76vh; width: 100%; min-width: 100%;">
+            
+
+
+<script>
+    $('#divBody').load('/MenuServicios');
+</script>
+
+        </div>
+        <div style="height: 1vh; min-height: 1vh;">
+            <table style="width: 100%; height: 100%; border-spacing: 0; border: 0; ">
+                <tr>
+                    <td width="50%" style="background-color: #ffce00"></td>
+                    <td width="25%" style="background-color: #0055b8"></td>
+                    <td width="25%" style="background-color: #e31f1a"></td>
+                </tr>
+            </table>
+        </div>
+        <div style="background-color: #002041; height: 8vh; min-height: 8vh;">
+            <table style="width: 100%; height: 100%; border-spacing: 0; border: 0; ">
+                <tr>
+                    <td class="text-left">
+                        <div id="divTerminos" name="divTerminos">
+                            <a id="aTerminos" name="aTerminos" href="javascript: TerminosCondiciones()"><span class="spnTerminos">T&#233;rminos y Condiciones</span></a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div id="divSocialIcons">
+                            <a style="cursor: pointer" onClick="window.open('http://www.flickr.com/photos/dgcomsoc/albums', '_blank')">
+                                <img src="/Content/imagenes/logo_flickr.png"/>
+                            </a>
+                            <a style="cursor: pointer" onClick="window.open('http://www.youtube.com/user/CancilleriaEcuador', '_blank')">
+                                <img src="/Content/imagenes/logo_youtube.png"/>
+                            </a>
+                            <a style="cursor: pointer" onClick="window.open('https://www.facebook.com/cancilleriaecuador', '_blank')">
+                                <img src="/Content/imagenes/logo_facebook.png"/>
+                            </a>
+                            <a style="cursor: pointer" onClick="window.open('http://twitter.com/cancilleriaec', '_blank')">
+                                <img src="/Content/imagenes/logo_twiter.png"/>
+                            </a>
+                        </div>
+                        <div style="margin-top: 11vh;">
+                            <img src="/Content/imagenes/barra_tricolor.png" style="width:100%; height:1vh;" align="right"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="/bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
+
+    
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+    // LLAMADOS A PANTALLAS
+    function PaginaInicial() {
+        $('#divBody').load('/MenuServicios');
+    }
+
+    function TerminosCondiciones() {
+        $('#divBody').load('/TerminosCondicion');
+    }
+
+    function ValidacionVisa() {
+        $('#divBody').load('/ValidacionVisa');
+    }
+
+    function ValidacionApostilla() {
+        $('#divBody').load('/ValidacionApostilla');
+    }
+
+    function ValidacionNotarial() {
+        $('#divBody').load('/ValidacionNotarial');
+    }
+
+    function ValidacionPasaporte() {
+        $('#divBody').load('/ValidacionPasaporte');
+    }
+
+    function ValidacionSolNaturalizacion() {
+        $('#divBody').load('/ValidacionSolNaturalizacion');
+    }
+
+    // CAMBIO DE IDIOMA
+    function cambiarIdiomaTerminosCondicion(parIdioma) {
+        $("#divBody").load('https://serviciosciudadanos.cancilleria.gob.ec/TerminosCondicion/Idioma?id=' + parIdioma);
+    };
+
+    function cambiarIdiomaValidacionVisa(parIdioma) {
+        $("#divBody").load('https://serviciosciudadanos.cancilleria.gob.ec/ValidacionVisa/Idioma?id=' + parIdioma);
+    };
+
+    function cambiarIdiomaValidacionApostilla(parIdioma) {
+        $("#divBody").load('https://serviciosciudadanos.cancilleria.gob.ec/ValidacionApostilla/Idioma?id=' + parIdioma);
+    };
+
+    function cambiarIdiomaValidacionApostillaURL(parIdioma) {
+        $("#divBody").load('https://serviciosciudadanos.cancilleria.gob.ec/ValidacionApostillaURL/Idioma?id=' + parIdioma);
+    };
+
+    function cambiarIdiomaValidacionNotarial(parIdioma) {
+        $("#divBody").load('https://serviciosciudadanos.cancilleria.gob.ec/ValidacionNotarial/Idioma?id=' + parIdioma);
+    };
+
+    function cambiarIdiomaValidacionPasaporte(parIdioma) {
+        $("#divBody").load('https://serviciosciudadanos.cancilleria.gob.ec/ValidacionPasaporte/Idioma?id=' + parIdioma);
+    };
+
+    function cambiarIdiomaValidacionSolNaturalizacion(parIdioma) {
+        $("#divBody").load('https://serviciosciudadanos.cancilleria.gob.ec/ValidacionSolNaturalizacion/Idioma?id=' + parIdioma);
+    };
+
+    function cambiarIdiomaMenuServicios(parIdioma) {
+        $("#divBody").load('https://serviciosciudadanos.cancilleria.gob.ec/MenuServicios/Idioma?id=' + parIdioma);
+    };
+
+    // LIMPIAR CAMPOS
+    function limpiarCamposValidacionVisa() {
+        $("#txt_NombresCompletos").val("");
+        $("#txt_Actividad").val("");
+        $("#txt_Estado").val("");
+        $("#img_fotografia").attr("src", "");
+    };
+
+    function limpiarCamposValidacionApostilla() {
+        $("#txt_NumeroEspecie").val("");
+        $("#txt_FechaAsignacion").val("");
+        $("#txt_TipoActoConsular").val("");
+        $("#txt_Documento").val("");
+        $("#txt_RutaDocument").val("");
+        $("#txt_RutaApostilla").val("");
+        $("#txt_Signatario").val("");
+        $("#txt_Cargo").val("");
+        $("#txt_Entidad").val("");
+    };
+
+    function limpiarCamposValidacionNotarial() {
+        $("#NumeroActoNotarial").val("");
+        $("#FechaDocumento").val("");
+        $("#CodigoVerificacion").val("");
+        $("#NombreActoConsular").val("");
+        $("#txt_RutaDocumento").val("");
+        $("#Signatario").val("");
+        $("#UnidadAdministrativa").val("");
+        $("#Solicitante").val("");
+        $("#DocumentoIdentidad").val("");
+    };
+
+    function limpiarCamposValidacionPasaporte() {
+        $("#DocumentoIdentidadBusqueda").val("");
+        $("#FechaEmisionBusqueda").val("");
+
+        limpiarDatosPasaporte();
+    };
+
+    function limpiarCamposValidacionSolNaturalizacion() {
+        $("#Solicitante").val("");
+        $("#FechaEmision").val("");
+        $("#UnidadAdministrativa").val("");
+    };
+
+    function limpiarDatosPasaporte() {
+        $("#DocumentoIdentidad").val("");
+        $("#FechaEmision").val("");
+        $("#PasaporteEmergente").val("");
+        $("#Signatario").val("");
+        $("#UnidadAdministrativa").val("");
+        $("#Solicitante").val("");
+        $("#txt_RutaPasaporte").val("");
+    }
+
+    // NUEVA BUSQUEDA
+    function nuevaBusquedaValidacionVisa() {
+        limpiarCamposValidacionVisa();
+        ValidacionVisa();
+    };
+
+    function nuevaBusquedaValidacionApostilla() {
+        limpiarCamposValidacionApostilla();
+        ValidacionApostilla();
+    };
+
+    function nuevaBusquedaValidacionDocumento() {
+        limpiarCamposValidacionNotarial();
+        ValidacionNotarial();
+    };
+
+    function nuevaBusquedaValidacionPasaporte() {
+        limpiarCamposValidacionPasaporte();
+        ValidacionPasaporte();
+    };
+
+    function nuevaBusquedaValidacionSolNaturalizacion() {
+        limpiarCamposValidacionSolNaturalizacion();
+        ValidacionSolNaturalizacion();
+    };
+
+    function salirValidacionPasaporte() {
+        $("#CodigoVerificacionBusqueda").val("");
+        window.location = '/';
+    };
+
+    // DESCARGA DOCUMENTOS
+    function fncDescargaVisa() {
+        var $documentoDescarga = $("#txt_RutaVisa").val();
+        var wnd = $("#verDocumento").data("kendoWindow");
+
+        wnd.refresh({
+            url: "/ServiciosInstitucionales/VerFormulario",
+            data: { ruta: $documentoDescarga }
+        });
+        wnd.center().center().open();
+    };
+
+    function fncDescargaDocumento() {
+        var $documentoDescarga = $("#txt_RutaDocumento").val();
+        var wnd = $("#verDocumento").data("kendoWindow");
+
+        wnd.refresh({
+            url: "/ServiciosInstitucionales/VerFormulario",
+            data: { ruta: $documentoDescarga }
+        });
+        wnd.center().center().open();
+    };
+
+    function fncDescargaApostilla() {
+        var $documentoDescarga = $("#txt_RutaApostilla").val();
+        var wnd = $("#verDocumento").data("kendoWindow");
+
+        wnd.refresh({
+            url: "/ServiciosInstitucionales/VerFormulario",
+            data: { ruta: $documentoDescarga }
+        });
+        wnd.center().center().open();
+    };
+
+    function fncDescargaPasaporte() {
+        var $documentoDescarga = $("#txt_RutaPasaporte").val();
+        var wnd = $("#verDocumento").data("kendoWindow");
+
+        wnd.refresh({
+            url: "/ServiciosInstitucionales/VerFormulario",
+            data: { ruta: $documentoDescarga }
+        });
+        wnd.center().center().open();
+    };
+
+    function fncDescargaDoble() {
+        var $documento1 = $("#txt_RutaApostilla").val();
+        var $documento2 = $("#txt_RutaDocumento").val();
+        var $nombreTipo = $('#nombreTipo').val();
+        var wnd = $("#verDocumentoDoble").data("kendoWindow");
+
+        wnd.refresh({
+            url: "/ServiciosInstitucionales/VerFormularioDosDocumentos",
+            data: { ruta1: $documento1, ruta2: $documento2, nombreTipo: $nombreTipo }
+        });
+        wnd.center().center().open();
+    };
+
+    // PROCESOS VALIDACION VISAS
+    function mostrarTextoValidacionVisa() {
+        //Oculta div del botón mostrar texto
+        var divMostrarTexto = document.getElementById("divMostrarTexto");
+        divMostrarTexto.style.display = "none";
+
+        //Muestra div del botón mostrar máscara
+        var divMostrarMascara = document.getElementById("divMostrarMascara");
+        divMostrarMascara.style.display = "";
+
+        $('#CodigoVerificacion').attr('type', 'text');
+    };
+
+    function mostrarMascaraValidacionVisa() {
+
+        //Muestra div del botón mostrar texto
+        var divMostrarTexto = document.getElementById("divMostrarTexto");
+        divMostrarTexto.style.display = "";
+
+        //Oculta div del botón mostrar máscara
+        var divMostrarMascara = document.getElementById("divMostrarMascara");
+        divMostrarMascara.style.display = "none";
+
+        $('#CodigoVerificacion').attr('type', 'password');
+    };
+
+    // PROCESOS VALIDACION PASAPORTE
+    function mostrarTextoValidacionPasaporte() {
+        //Oculta div del botón mostrar texto
+        var divMostrarTexto = document.getElementById("divMostrarTexto");
+        divMostrarTexto.style.display = "none";
+
+        //Muestra div del botón mostrar máscara
+        var divMostrarMascara = document.getElementById("divMostrarMascara");
+        divMostrarMascara.style.display = "";
+
+        $('#CodigoVerificacionBusqueda').attr('type', 'text');
+    };
+
+    function mostrarMascaraValidacionPasaporte() {
+
+        //Muestra div del botón mostrar texto
+        var divMostrarTexto = document.getElementById("divMostrarTexto");
+        divMostrarTexto.style.display = "";
+
+        //Oculta div del botón mostrar máscara
+        var divMostrarMascara = document.getElementById("divMostrarMascara");
+        divMostrarMascara.style.display = "none";
+
+        $('#CodigoVerificacionBusqueda').attr('type', 'password');
+    };
+
+    // BLOQUEO PANTALLA
+    function loadingAction(mensaje) {
+        $.blockUI({
+            css: {
+                border: 'none',
+                padding: '20px',
+                backgroundColor: '#252c52',
+                '-webkit-border-radius': '10px',
+                '-moz-border-radius': '10px',
+                opacity: 1.2,
+                color: 'yellow',
+                'font-weight': 'bold',
+                'font-size': '30px'
+            },
+            message: mensaje
+        });
+    };
+
+    //Solo permite ingresar números.
+    function soloNumeros(e) {
+
+        var tecla = (document.all) ? e.keyCode : e.which;
+
+        //Tecla de retroceso para borrar lo digitado cuando no sea número.
+        if (tecla == 8) {
+            return true;
+        }
+
+        // Patrón de entrada, en este caso solo acepta números.
+        var patron = /[0-9]/;
+        var teclaFinal = String.fromCharCode(tecla);
+        return patron.test(teclaFinal);
+
+    }
+
+    // VALIDACIONES GENERALES CAMPOS
+    
+    function validaNumerosLetras(evt) {
+        // charCode: 8        equivale a RETROCESO
+        // charCode: 9        equivale a TAB
+        // charCode: 45       equivale a -
+        // charCode: 47       equivale a /
+        // charCode: 48 a 57  equivale del   0 al 9
+        // charCode: 65 a 90  equivale de la A la Z
+        // charCode: 97 a 122 equivale de la a la z
+        // charCode: 209      equivale a ñ
+        // charCode: 241      equivale a Ñ
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode == 8 || charCode == 9 || charCode == 45 || charCode == 47 || (charCode >= 48 && charCode <= 57) || (charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode == 209 || charCode == 241) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    // VALIDACIONES GENERALES CAMPOS
+    
+    function validaNumerosLetrasSG(evt) {
+        // charCode: 8        equivale a RETROCESO
+        // charCode: 9        equivale a TAB
+        // charCode: 48 a 57  equivale del   0 al 9
+        // charCode: 65 a 90  equivale de la A la Z
+        // charCode: 97 a 122 equivale de la a la z
+        // charCode: 209      equivale a ñ
+        // charCode: 241      equivale a Ñ
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode == 8 || charCode == 9 || (charCode >= 48 && charCode <= 57) || (charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode == 209 || charCode == 241) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    
+    function validaFormatoFecha(evt) {
+        // charCode: 8        equivale a RETROCESO
+        // charCode: 9        equivale a TAB
+        // charCode: 47       equivale a /
+        // charCode: 48 a 57  equivale del   0 al 9
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode == 8 || charCode == 9 || charCode == 47 || (charCode >= 48 && charCode <= 57)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    //Utilizado para impedir la digitación en los campos tipo fecha. Componente DatePickerFor.
+    function sinTexto(e) {
+        e.preventDefault();
+    }
+
+    function ocultarMsgCampoObligatorio() {
+        $('#divPaisObligatorio').html('');
+        $('#divPaisObligatorio').hide();
+    }
+
+    //Función que toma el texto del combo y lo almacena en una variable oculta.
+    function setearNombrePaisDeOrigen() {
+
+        ocultarMsgCampoObligatorio();
+
+        var paisDeOrigen = $("#IdPaisDeOrigen").data("kendoDropDownList").text();
+        $("#PaisDeOrigen").val(paisDeOrigen);
+    }
+
+</script>

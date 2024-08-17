@@ -1,32 +1,5079 @@
 <!DOCTYPE html>
-<html>
+<!-- saved from url=(0042)file:///Users/mandeez/Downloads/MREMH.html -->
+<html
+  style=""
+  class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths k-webkit k-webkit127 translated-ltr js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths js js"
+>
   <head>
-    <title>Verify Visa</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
-  <body>
-    <h1>Verify Visa</h1>
-    <form method="get" action="/">
-      <label>Enter Passport Number:</label><br />
-      <input type="text" name="passportNo" required /><br />
-      <button type="submit">Search</button>
-    </form>
-    {% if visa %}
-    <h2>Visa Information</h2>
-    <p>Place of Issue: {{ visa.place_of_issue }}</p>
-    <p>Valid From: {{ visa.valid_from }}</p>
-    <p>Valid Until: {{ visa.valid_until }}</p>
-    <p>Document No: {{ visa.document_no }}</p>
-    <p>Full Name: {{ visa.fullName }}</p>
-    <p>Passport No: {{ visa.passportNo }}</p>
-    <p>Sex: {{ visa.sex }}</p>
-    <p>Birth Date: {{ visa.birth_date }}</p>
-    <p>Nationality: {{ visa.nationality }}</p>
-    <form method="post" action="/download_visa">
-      <input type="hidden" name="passportNo" value="{{ visa.passportNo }}" />
-      <button type="submit">Download Visa</button>
-    </form>
-    {% elif passportNo %}
-    <p>Visa not found</p>
-    {% endif %}
+  <body cz-shortcut-listen="true">
+    <div
+      id="in-page-channel-node-id"
+      data-channel-name="in_page_channel_MxnpS3"
+    ></div>
+    <style>
+      .app-crx-show-flight-price-compare {
+        width: 320px;
+        overflow: hidden;
+        position: fixed;
+        border-radius: 8px;
+        right: 20px;
+        top: 20px;
+        background: #fff;
+        z-index: 999;
+        box-shadow: 0px 8px 16px 0px rgba(69, 88, 115, 0.12);
+        color: #8592a6;
+        font-size: 14px;
+        font-weight: normal;
+        letter-spacing: 0px;
+        font-family: system-ui;
+        text-align: left;
+      }
+      .app-crx-show-flight-price-compare .flex,
+      .app-crx-show-flight-price-compare .flex-column,
+      .app-crx-show-flight-price-compare .v-center,
+      .app-crx-show-flight-price-compare .h-center,
+      .app-crx-show-flight-price-compare .flex-column-center,
+      .app-crx-show-flight-price-compare .flex-center {
+        display: -webkit-flex;
+        display: flex;
+      }
+      .app-crx-show-flight-price-compare .flex1 {
+        flex: 1 1 auto;
+      }
+      .app-crx-show-flight-price-compare .h-flex-center,
+      .app-crx-show-flight-price-compare .h-center,
+      .app-crx-show-flight-price-compare .flex-column-center,
+      .app-crx-show-flight-price-compare .flex-center {
+        -webkit-justify-content: center;
+        justify-content: center;
+      }
+      .app-crx-show-flight-price-compare .v-flex-center,
+      .app-crx-show-flight-price-compare .v-center,
+      .app-crx-show-flight-price-compare .flex-center {
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      .app-crx-show-flight-price-compare .flex-between {
+        justify-content: space-between;
+      }
+      .app-crx-show-flight-price-compare .flex-column {
+        flex-direction: column;
+      }
+      .app-crx-show-flight-price-compare .flex-column-center {
+        flex-direction: column;
+      }
+      .app-crx-show-flight-price-compare .ml-4 {
+        margin-left: 4px;
+      }
+      .app-crx-show-flight-price-compare .mr-4 {
+        margin-right: 4px;
+      }
+      .app-crx-show-flight-price-compare .mr-16 {
+        margin-right: 16px;
+      }
+      .app-crx-show-flight-price-compare .ft-12 {
+        font-size: 12px;
+        line-height: 18px;
+      }
+      .app-crx-show-flight-price-compare .align-center {
+        align-items: center;
+      }
+      .app-crx-show-flight-price-compare .justify-around {
+        justify-content: space-around;
+      }
+      .app-crx-show-flight-price-compare .flex-wrap {
+        flex-wrap: wrap;
+      }
+      .app-crx-show-flight-price-compare .color-black {
+        color: #0f294d;
+      }
+      .app-crx-show-flight-price-compare .color-cyan {
+        color: #06aebd;
+      }
+      .app-crx-show-flight-price-compare .flex {
+        display: flex;
+      }
+      .app-crx-show-flight-price-compare .color-tertiaryBlack {
+        color: #8592a6;
+      }
+      .app-crx-show-flight-price-compare .color-brandBlue {
+        color: #3264ff;
+      }
+      .app-crx-show-flight-price-compare .f-bold {
+        font-weight: bold;
+      }
+      .app-crx-show-flight-price-compare .mt-4 {
+        margin-top: 4px;
+      }
+      .app-crx-show-flight-price-compare .mb-4 {
+        margin-bottom: 4px;
+      }
+      .app-crx-show-flight-price-compare .f-12 {
+        font-size: 12px;
+      }
+      .app-crx-show-flight-price-compare .divider {
+        width: 100%;
+        height: 1px;
+        background-color: #dadfe6;
+        transform: scaleY(0.5);
+      }
+      .app-crx-show-flight-price-compare .mh-8 {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .mh-16 {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      .app-crx-show-flight-price-compare .mt-8 {
+        margin-top: 8px;
+      }
+      .app-crx-show-flight-price-compare .mt-16 {
+        margin-top: 16px;
+      }
+      .app-crx-show-flight-price-compare .mb-8 {
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .header-wrapper {
+        display: flex;
+        align-items: center;
+        margin: 16px 16px 0;
+      }
+      .app-crx-show-flight-price-compare .header-wrapper.bold {
+        justify-content: flex-start;
+      }
+      .app-crx-show-flight-price-compare .header-wrapper.bold .header-text {
+        font-size: 16px;
+      }
+      .app-crx-show-flight-price-compare .header-wrapper .header-icon {
+        width: 44px;
+        height: 44px;
+      }
+      .app-crx-show-flight-price-compare .header-wrapper .header-icon .img {
+        transform: scale(0.5, 0.5);
+        max-width: 100%;
+        border-radius: 50%;
+      }
+      .app-crx-show-flight-price-compare .header-wrapper .header-text {
+        color: #3264ff;
+        font-size: 14px;
+        text-align: center;
+        font-weight: bold;
+        height: 22px;
+        letter-spacing: 0px;
+        line-height: 22px;
+      }
+      .app-crx-show-flight-price-compare .header-wrapper .header-close {
+        cursor: pointer;
+        position: absolute;
+        right: 6px;
+        top: 6px;
+      }
+      .app-crx-show-flight-price-compare .header-wrapper .header-close span {
+        text-align: center;
+        color: #ced2d9;
+        font-size: 22px;
+      }
+      .app-crx-show-flight-price-compare .header-wrapper .header-close path {
+        fill: #8592a6;
+      }
+      .app-crx-show-flight-price-compare .flex {
+        display: flex;
+      }
+      .app-crx-show-flight-price-compare .color-tertiaryBlack {
+        color: #8592a6;
+      }
+      .app-crx-show-flight-price-compare .color-brandBlue {
+        color: #3264ff;
+      }
+      .app-crx-show-flight-price-compare .f-bold {
+        font-weight: bold;
+      }
+      .app-crx-show-flight-price-compare .mt-4 {
+        margin-top: 4px;
+      }
+      .app-crx-show-flight-price-compare .mb-4 {
+        margin-bottom: 4px;
+      }
+      .app-crx-show-flight-price-compare .f-12 {
+        font-size: 12px;
+      }
+      .app-crx-show-flight-price-compare .divider {
+        width: 100%;
+        height: 1px;
+        background-color: #dadfe6;
+        transform: scaleY(0.5);
+      }
+      .app-crx-show-flight-price-compare .mh-8 {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .mh-16 {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      .app-crx-show-flight-price-compare .mt-8 {
+        margin-top: 8px;
+      }
+      .app-crx-show-flight-price-compare .mt-16 {
+        margin-top: 16px;
+      }
+      .app-crx-show-flight-price-compare .mb-8 {
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .flightdetail-wrapper {
+        border-radius: 0px 0px 4px 4px;
+      }
+      .app-crx-show-flight-price-compare .tags {
+        display: flex;
+        font-size: 12px;
+      }
+      .app-crx-show-flight-price-compare .tags .flight-tag {
+        background-color: rgba(50, 100, 255, 0.08);
+        color: #3264ff;
+        padding: 4px;
+        flex: 1;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 0px;
+        line-height: 18px;
+        border-radius: 4px 4px 0px 0px;
+      }
+      .app-crx-show-flight-price-compare .tags .compare-tag {
+        padding: 2px 4px;
+        background: rgba(50, 100, 255, 0.08);
+        color: #3264ff;
+        border-radius: 1px;
+      }
+      .app-crx-show-flight-price-compare .flightdetail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .app-crx-show-flight-price-compare .flightdetail .from-wrapper .date,
+      .app-crx-show-flight-price-compare .flightdetail .to-wrapper .date {
+        margin-bottom: 4px;
+      }
+      .app-crx-show-flight-price-compare .flightdetail .from-wrapper .time,
+      .app-crx-show-flight-price-compare .flightdetail .to-wrapper .time {
+        color: #0f294d;
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .app-crx-show-flight-price-compare .flightdetail .to-wrapper {
+        text-align: right;
+      }
+      .app-crx-show-flight-price-compare .flightdetail-wrapper {
+        background-color: #f5f7fa;
+        padding: 8px;
+      }
+      .app-crx-show-flight-price-compare
+        .flightdetail-wrapper
+        .airplane-icon-wrapper
+        .airline-dashed {
+        width: 80px;
+        height: 2px;
+        background-color: #dadfe6;
+        position: relative;
+      }
+      .app-crx-show-flight-price-compare
+        .flightdetail-wrapper
+        .airplane-icon-wrapper
+        .airline-dashed::before,
+      .app-crx-show-flight-price-compare
+        .flightdetail-wrapper
+        .airplane-icon-wrapper
+        .airline-dashed::after {
+        content: '';
+        display: block;
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        top: -1px;
+        background-color: #dadfe6;
+      }
+      .app-crx-show-flight-price-compare
+        .flightdetail-wrapper
+        .airplane-icon-wrapper
+        .airline-dashed::before {
+        left: 0;
+      }
+      .app-crx-show-flight-price-compare
+        .flightdetail-wrapper
+        .airplane-icon-wrapper
+        .airline-dashed::after {
+        right: 0;
+      }
+      .app-crx-show-flight-price-compare
+        .flightdetail-wrapper
+        .airplane-icon-wrapper
+        img {
+        height: 32px;
+        width: 32px;
+      }
+      .app-crx-show-flight-price-compare .flightdetail-wrapper .passangerInfo {
+        margin-top: 8px;
+      }
+      .app-crx-show-flight-price-compare
+        .flightdetail-wrapper
+        .passangerInfo
+        path {
+        fill: #06aebd !important;
+      }
+      .app-crx-show-flight-price-compare .flex {
+        display: flex;
+      }
+      .app-crx-show-flight-price-compare .color-tertiaryBlack {
+        color: #8592a6;
+      }
+      .app-crx-show-flight-price-compare .color-brandBlue {
+        color: #3264ff;
+      }
+      .app-crx-show-flight-price-compare .f-bold {
+        font-weight: bold;
+      }
+      .app-crx-show-flight-price-compare .mt-4 {
+        margin-top: 4px;
+      }
+      .app-crx-show-flight-price-compare .mb-4 {
+        margin-bottom: 4px;
+      }
+      .app-crx-show-flight-price-compare .f-12 {
+        font-size: 12px;
+      }
+      .app-crx-show-flight-price-compare .divider {
+        width: 100%;
+        height: 1px;
+        background-color: #dadfe6;
+        transform: scaleY(0.5);
+      }
+      .app-crx-show-flight-price-compare .mh-8 {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .mh-16 {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      .app-crx-show-flight-price-compare .mt-8 {
+        margin-top: 8px;
+      }
+      .app-crx-show-flight-price-compare .mt-16 {
+        margin-top: 16px;
+      }
+      .app-crx-show-flight-price-compare .mb-8 {
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .flightinfo-wrapper .compare-tag {
+        font-size: 14px;
+        color: #455873;
+        margin-top: 8px;
+      }
+      .app-crx-show-flight-price-compare .flightinfo-wrapper .compare-tag span {
+        color: #f94c86;
+        font-weight: bold;
+      }
+      .app-crx-show-flight-price-compare
+        .flightinfo-wrapper
+        .compare-tag.higher
+        span {
+        color: #06aebd;
+      }
+      .app-crx-show-flight-price-compare .flex {
+        display: flex;
+      }
+      .app-crx-show-flight-price-compare .color-tertiaryBlack {
+        color: #8592a6;
+      }
+      .app-crx-show-flight-price-compare .color-brandBlue {
+        color: #3264ff;
+      }
+      .app-crx-show-flight-price-compare .f-bold {
+        font-weight: bold;
+      }
+      .app-crx-show-flight-price-compare .mt-4 {
+        margin-top: 4px;
+      }
+      .app-crx-show-flight-price-compare .mb-4 {
+        margin-bottom: 4px;
+      }
+      .app-crx-show-flight-price-compare .f-12 {
+        font-size: 12px;
+      }
+      .app-crx-show-flight-price-compare .divider {
+        width: 100%;
+        height: 1px;
+        background-color: #dadfe6;
+        transform: scaleY(0.5);
+      }
+      .app-crx-show-flight-price-compare .mh-8 {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .mh-16 {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      .app-crx-show-flight-price-compare .mt-8 {
+        margin-top: 8px;
+      }
+      .app-crx-show-flight-price-compare .mt-16 {
+        margin-top: 16px;
+      }
+      .app-crx-show-flight-price-compare .mb-8 {
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .compare-wrapper {
+        margin: 0 16px 8px;
+      }
+      .app-crx-show-flight-price-compare .compare-wrapper .book-btn {
+        background: #3264ff;
+        border-radius: 2px;
+        height: 38px;
+        width: 100%;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0px;
+      }
+      .app-crx-show-flight-price-compare .compare-wrapper .book-btn:hover {
+        background-color: #2d5ae5;
+      }
+      .app-crx-show-flight-price-compare .flex {
+        display: flex;
+      }
+      .app-crx-show-flight-price-compare .color-tertiaryBlack {
+        color: #8592a6;
+      }
+      .app-crx-show-flight-price-compare .color-brandBlue {
+        color: #3264ff;
+      }
+      .app-crx-show-flight-price-compare .f-bold {
+        font-weight: bold;
+      }
+      .app-crx-show-flight-price-compare .mt-4 {
+        margin-top: 4px;
+      }
+      .app-crx-show-flight-price-compare .mb-4 {
+        margin-bottom: 4px;
+      }
+      .app-crx-show-flight-price-compare .f-12 {
+        font-size: 12px;
+      }
+      .app-crx-show-flight-price-compare .divider {
+        width: 100%;
+        height: 1px;
+        background-color: #dadfe6;
+        transform: scaleY(0.5);
+      }
+      .app-crx-show-flight-price-compare .mh-8 {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .mh-16 {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      .app-crx-show-flight-price-compare .mt-8 {
+        margin-top: 8px;
+      }
+      .app-crx-show-flight-price-compare .mt-16 {
+        margin-top: 16px;
+      }
+      .app-crx-show-flight-price-compare .mb-8 {
+        margin-bottom: 8px;
+      }
+      .m-chromePluginV2__content-leftimg {
+        width: 66px;
+        height: 16px;
+        background-size: cover;
+      }
+      .m-chromePluginV2__content-leftimg-wrapper {
+        width: 66px;
+        height: 16px;
+      }
+      .m-chromePluginV2__price-item {
+        justify-content: flex-end;
+        flex: 1;
+        text-align: center;
+      }
+      .m-chromePluginV2__price-text {
+        word-break: break-all;
+        width: 100%;
+      }
+      .m-chromePluginV2__price-otherbar,
+      .m-chromePluginV2__price-tripbar,
+      .m-chromePluginV2__price-tripbar-loading {
+        width: 32px;
+        border-radius: 4px 4px 0 0;
+      }
+      .m-chromePluginV2__price-otherbar {
+        height: 60px;
+        background: rgba(50, 100, 255, 0.32);
+      }
+      .m-chromePluginV2__price-tripbar {
+        height: 40px;
+        background: #3264ff;
+      }
+      .m-chromePluginV2__price-tripbar-loading {
+        height: 60px;
+        background: #3264ff;
+      }
+      .app-crx-show-flight-price-compare .loading-wrapper .loading-text {
+        padding: 0 16px 16px;
+      }
+      .app-crx-show-flight-price-compare .loading-wrapper .header-icon {
+        width: 16px;
+        height: 16px;
+      }
+      .app-crx-show-flight-price-compare .loading-wrapper .header-icon path {
+        fill: #3264ff !important;
+      }
+      .app-crx-show-flight-price-compare .loading-wrapper .loading-loadgif {
+        display: flex;
+        flex-direction: column;
+        margin-left: 4px;
+        justify-content: center;
+        align-items: center;
+      }
+      .app-crx-show-flight-price-compare .noflight-wrapper .noflight-text {
+        margin-top: 4px;
+        overflow: hidden;
+        color: #455873;
+        font-size: 13px;
+        font-weight: normal;
+        letter-spacing: 0px;
+        line-height: 18px;
+        width: 288px;
+        margin: 0 16px 16px 16px;
+      }
+      .app-crx-show-flight-price-compare .flex {
+        display: flex;
+      }
+      .app-crx-show-flight-price-compare .color-tertiaryBlack {
+        color: #8592a6;
+      }
+      .app-crx-show-flight-price-compare .color-brandBlue {
+        color: #3264ff;
+      }
+      .app-crx-show-flight-price-compare .f-bold {
+        font-weight: bold;
+      }
+      .app-crx-show-flight-price-compare .mt-4 {
+        margin-top: 4px;
+      }
+      .app-crx-show-flight-price-compare .mb-4 {
+        margin-bottom: 4px;
+      }
+      .app-crx-show-flight-price-compare .f-12 {
+        font-size: 12px;
+      }
+      .app-crx-show-flight-price-compare .divider {
+        width: 100%;
+        height: 1px;
+        background-color: #dadfe6;
+        transform: scaleY(0.5);
+      }
+      .app-crx-show-flight-price-compare .mh-8 {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .mh-16 {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      .app-crx-show-flight-price-compare .mt-8 {
+        margin-top: 8px;
+      }
+      .app-crx-show-flight-price-compare .mt-16 {
+        margin-top: 16px;
+      }
+      .app-crx-show-flight-price-compare .mb-8 {
+        margin-bottom: 8px;
+      }
+      .app-crx-show-flight-price-compare .welcome-inject-wrapper {
+        color: #fff;
+        background: #3264ff;
+      }
+      .app-crx-show-flight-price-compare
+        .welcome-inject-wrapper
+        .header-wrapper {
+        color: #fff;
+        background: #3264ff;
+      }
+      .app-crx-show-flight-price-compare
+        .welcome-inject-wrapper
+        .header-wrapper
+        .header-icon
+        .img {
+        display: none;
+      }
+      .app-crx-show-flight-price-compare
+        .welcome-inject-wrapper
+        .header-wrapper
+        .header-text {
+        color: #fff;
+      }
+      .app-crx-show-flight-price-compare
+        .welcome-inject-wrapper
+        .header-wrapper
+        .header-close
+        span {
+        color: #fff;
+      }
+      .app-crx-show-flight-price-compare .welcome-inject-wrapper .content-1 {
+        margin: 16px 16px 8px 16px;
+      }
+      .app-crx-show-flight-price-compare .welcome-inject-wrapper .content-2 {
+        margin: 0 16px 8px 16px;
+      }
+      .app-crx-show-flight-price-compare
+        .welcome-inject-wrapper
+        .content-2
+        span {
+        text-decoration: underline;
+      }
+      .app-crx-show-flight-price-compare
+        .welcome-inject-wrapper
+        .trip-com-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 24px 16px 24px;
+      }
+      .app-crx-show-flight-price-compare
+        .welcome-inject-wrapper
+        .trip-com-wrapper
+        .trip-com-logo {
+        height: 18px;
+        width: 73px;
+      }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MREMH</title>
+    <link
+      href="{{url_for('static', filename='MREMH_files/css')}}"
+      rel="stylesheet"
+    />
+
+    <script src="{{url_for('static', filename='MREMH_files/modernizr')}}"></script>
+
+    <!--This bundle was moved by the Telerik VS Extensions for compatibility reasons-->
+    <script src="{{url_for('static', filename='MREMH_files/jquery')}}"></script>
+
+    <link
+      href="{{url_for('static', filename='MREMH_files/kendo.common.min.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{{url_for('static', filename='MREMH_files/kendo.mobile.all.min.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{{url_for('static', filename='MREMH_files/kendo.blueopal.min.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="{{url_for('static', filename='MREMH_files/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='MREMH_files/jquery.validate.min.js')}}"></script>
+    <script src="{{url_for('static', filename='MREMH_files/jquery.unobtrusive-ajax.min.js')}}"></script>
+    <script src="{{url_for('static', filename='MREMH_files/jszip.min.js')}}"></script>
+    <script src="{{url_for('static', filename='MREMH_files/kendo.all.min.js')}}"></script>
+    <script src="{{url_for('static', filename='MREMH_files/kendo.aspnetmvc.min.js')}}"></script>
+    <script src="{{url_for('static', filename='MREMH_files/kendo.modernizr.custom.js')}}"></script>
+
+    <script src="{{url_for('static', filename='MREMH_files/utils.js')}}"></script>
+    <script src="{{url_for('static', filename='MREMH_files/jquery.blockUI.js')}}"></script>
+    <script src="{{url_for('static', filename='MREMH_files/kendo.culture.es-ES.min.js')}}"></script>
+
+    <link
+      href="{{url_for('static', filename='MREMH_files/sites.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{{url_for('static', filename='MREMH_files/utils.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{{url_for('static', filename='MREMH_files/font-awesome.min.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="{{url_for('static', filename='MREMH_files/kendo.modernizr.custom.js')}}"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        kendo.culture('es-ES');
+      });
+
+      $(function () {
+        $('form').kendoValidator();
+      });
+    </script>
+    <style>
+
+      .text-right a img {
+          width: 4.5vh;
+      }
+
+      #aTerminos {
+          text-decoration: none;
+          color: white;
+          font-weight:bold;
+          border: 1px solid white;
+          border-radius: 10px;
+          padding: 5px;
+          display: inline-block;
+          vertical-align: middle;
+      }
+      #divTerminos {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          padding-left: 0.5vw;
+          margin-top:-65px;
+      }
+      .text-left, .text-right {
+          height: 100%;
+      }
+
+      .text-right {
+          text-align: right;
+      }
+
+      #divSocialIcons {
+          margin-top: 1.5vh;
+      }
+
+      @media only screen and (max-width: 768px) {
+
+          .text-left {
+              text-align: center;
+              margin-top:0vh;
+          }
+          .text-right {
+              text-align: right;
+          }
+
+          #divTerminos {
+              padding: 10px;
+              text-align: center;
+              margin-top: 0;
+          }
+
+          #divSocialIcons {
+              margin-top: 10px;
+              text-align: right;
+              margin-right:2vh;
+          }
+
+      @media only screen and (max-width: 480px) {
+          .spnTitulo {
+              font-size: x-large;
+          }
+          #divTerminos {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              padding-left: 0.5vw;
+              margin-top: -85px;
+          }
+
+      }
+    </style>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      charset="UTF-8"
+      href="{{url_for('static', filename='MREMH_files/m=el_main_css')}}"
+    />
+
+    <div
+      id="divPaginaPrincipal"
+      name="divPaginaPrincipal"
+      style="overflow-y: hidden; background-color: #002041"
+    >
+      <div class="encabezado">
+        <table style="width: 100%; height: 100%; border: 0">
+          <tbody>
+            <tr style="height: 75%">
+              <td style="width: 88.89%">
+                <table style="width: 100%; height: 100%">
+                  <tbody>
+                    <tr style="height: 100%">
+                      <td>
+                        <table style="width: 100%; height: 100%">
+                          <tbody>
+                            <tr>
+                              <!--<td width="50%" style="text-align: center; color: white;"><img src="~/Content/imagenes/logo_eVisaEcuador.png" style="height:14vh;"/></td>-->
+                              <td
+                                id="tdTitulo"
+                                name="tdTitulo"
+                                width="50%"
+                                style="
+                                  text-align: center;
+                                  vertical-align: middle;
+                                  color: white;
+                                  font-family: Arial;
+                                  font-weight: bold;
+                                  font-size: xx-large;
+                                "
+                              >
+                                CONSULTA DE SERVICIOS CIUDADANOS
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        id="divBody"
+        name="divBody"
+        class="container body-content"
+        style="height: 76vh; min-height: 76vh; width: 100%; min-width: 100%"
+      >
+        <div
+          class="container body-content"
+          style="height: 77vh; min-height: 77vh; width: 100%; min-width: 100%"
+        >
+          <div
+            id="divIdioma"
+            style="
+              background-color: #25506d;
+              height: 5vh;
+              min-height: 5vh;
+              width: 100%;
+              min-width: 100%;
+            "
+          >
+            <table style="width: 100%">
+              <tbody>
+                <tr>
+                  <td style="width: 20%">
+                    <div style="text-align: left; padding-left: 0.5vw">
+                      <a
+                        id="aInicio"
+                        name="aInicio"
+                        href="javascript: PaginaInicial()"
+                        style="
+                          text-decoration: none;
+                          border-radius: 10px;
+                          -moz-border-radius: 10px;
+                          -webkit-border-radius: 10px;
+                          padding: 4px;
+                          border-width: thin;
+                          font-weight: bold;
+                          color: #ffffff;
+                          border-color: #ffffff;
+                          border-style: solid;
+                          font-family: Arial;
+                        "
+                        ><i class="fa fa-home" aria-hidden="true"></i
+                        ><font style="vertical-align: inherit"
+                          ><font style="vertical-align: inherit"
+                            >Services</font
+                          ></font
+                        ></a
+                      >
+                    </div>
+                  </td>
+                  <td style="width: 60%">
+                    <div
+                      style="
+                        text-align: center;
+                        font-weight: bold;
+                        color: #ffffff;
+                        font-family: Arial;
+                      "
+                    >
+                      <font style="vertical-align: inherit"
+                        ><font style="vertical-align: inherit">
+                          SERVICE - VISA VALIDATION
+                        </font></font
+                      >
+                    </div>
+                  </td>
+                  <td style="width: 20%">
+                    <div style="text-align: right; padding-right: 0.5vw">
+                      <img
+                        src="{{url_for('static', filename='MREMH_files/espanol.png')}}"
+                        title="Spanish"
+                        style="cursor: pointer; width: 4.5vh"
+                        onclick="cambiarIdiomaValidacionVisa(&#39;es&#39;);"
+                      />
+                      <img
+                        src="{{url_for('static', filename='MREMH_files/ingles.png')}}"
+                        title="English"
+                        style="cursor: pointer; width: 4.5vh"
+                        onclick="cambiarIdiomaValidacionVisa(&#39;en&#39;);"
+                      />
+                      <img
+                        src="{{url_for('static', filename='MREMH_files/frances.png')}}"
+                        title="French"
+                        style="cursor: pointer; width: 4.5vh"
+                        onclick="cambiarIdiomaValidacionVisa(&#39;fr&#39;);"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            style="
+              overflow-y: auto;
+              height: 71vh;
+              min-height: 71vh;
+              width: 100%;
+              min-width: 100%;
+              padding-left: 2vw;
+              padding-right: 2vw;
+            "
+          >
+            <input
+              type="hidden"
+              id="hidTerminos"
+              name="hidTerminos"
+              value="Términos y Condiciones"
+            />
+            <input
+              type="hidden"
+              id="hidNombreSistema"
+              name="hidNombreSistema"
+              value="CONSULTA DE SERVICIOS CIUDADANOS"
+            />
+            <input
+              type="hidden"
+              id="hidObteniendoDatos"
+              name="hidObteniendoDatos"
+              value="Obteniendo Datos"
+            />
+            <div class="titulos-fiel">
+              <h4>
+                <font style="vertical-align: inherit"
+                  ><font style="vertical-align: inherit"
+                    >&nbsp;&nbsp;Data for consultation</font
+                  ></font
+                >
+              </h4>
+            </div>
+
+            <span class="required"
+              ><font style="vertical-align: inherit"
+                ><font style="vertical-align: inherit"
+                  >* Required field</font
+                ></font
+              ></span
+            >
+
+            <div id="consultaForm">
+              <form
+                action="/"
+                data-ajax="true"
+                data-ajax-begin="loadingAction(document.getElementById(&#39;hidObteniendoDatos&#39;).value)"
+                data-ajax-complete="$.unblockUI()"
+                data-ajax-mode="replace"
+                data-ajax-update="#divBody"
+                id="frmConsultaVisa"
+                method="get"
+                data-bitwarden-watching="1"
+                data-role="validator"
+                novalidate="novalidate"
+              >
+                <table style="width: 100%; height: 100%">
+                  <tbody>
+                    <tr>
+                      <td style="width: 50%">
+                        <table style="border-spacing: 8px">
+                          <tbody>
+                            <tr>
+                              <td style="width: 38%">
+                                <strong
+                                  ><font style="vertical-align: inherit"
+                                    ><font style="vertical-align: inherit"
+                                      >Passport / Identity Number
+                                    </font></font
+                                  ><span class="required"
+                                    ><font style="vertical-align: inherit"
+                                      ><font style="vertical-align: inherit"
+                                        >*</font
+                                      ></font
+                                    ></span
+                                  ></strong
+                                >
+                              </td>
+                              <td>
+                                <input
+                                  autocomplete="off"
+                                  class="textIngresoDatos"
+                                  data-val="true"
+                                  data-val-required="El campo N&amp;#250;mero Pasaporte / Identidad es obligatorio"
+                                  name="passportNo"
+                                  id="NumeroPasaporte"
+                                  maxlength="30"
+                                  style="
+                                    text-transform: uppercase;
+                                    width: 175px;
+                                  "
+                                  type="text"
+                                  value=""
+                                  required=""
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>
+                                <!-- <span class="field-validation-valid" data-valmsg-for="NumeroPasaporte" data-valmsg-replace="true"></span>-->
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>
+                                <strong
+                                  ><font style="vertical-align: inherit"
+                                    ><font style="vertical-align: inherit"
+                                      >Country
+                                    </font></font
+                                  ><span class="required"
+                                    ><font style="vertical-align: inherit"
+                                      ><font style="vertical-align: inherit"
+                                        >*</font
+                                      ></font
+                                    ></span
+                                  ></strong
+                                >
+                              </td>
+                              <td>
+                                <span
+                                  title=""
+                                  class="k-widget k-dropdown k-header"
+                                  unselectable="on"
+                                  role="listbox"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                  tabindex="0"
+                                  aria-owns="IdNacionalidad_listbox"
+                                  aria-live="polite"
+                                  aria-disabled="false"
+                                  style="width: 280px"
+                                  aria-busy="false"
+                                  aria-activedescendant="5834f0d2-1dcc-48a6-8006-b18124b5dfcd"
+                                  ><span
+                                    unselectable="on"
+                                    class="k-dropdown-wrap k-state-default"
+                                    ><span unselectable="on" class="k-input"
+                                      ><font style="vertical-align: inherit"
+                                        ><font style="vertical-align: inherit"
+                                          >-- Select --</font
+                                        ></font
+                                      ></span
+                                    ><span
+                                      unselectable="on"
+                                      class="k-select"
+                                      aria-label="select"
+                                      ><span
+                                        class="k-icon k-i-arrow-60-down"
+                                      ></span></span></span
+                                  ><input
+                                    data-val="true"
+                                    data-val-number="El campo Nacionalidad debe ser un número."
+                                    data-val-required="El campo Pa&amp;#237;s es obligatorio"
+                                    id="IdNacionalidad"
+                                    name="IdNacionalidad"
+                                    style="width: 280px; display: none"
+                                    type="text"
+                                    value="0"
+                                    data-role="dropdownlist"
+                                    required=""
+                                    class="k-valid"
+                                /></span>
+                                <script>
+                                  kendo.syncReady(function () {
+                                    jQuery('#IdNacionalidad').kendoDropDownList(
+                                      {
+                                        change: ocultarMsgCampoObligatorio,
+                                        dataSource: {
+                                          transport: {
+                                            read: {
+                                              url: '/ValidacionVisa/ListaPaisesCombo',
+                                            },
+                                            prefix: '',
+                                          },
+                                          schema: { errors: 'Errors' },
+                                        },
+                                        dataTextField: 'Nombre',
+                                        filter: 'startswith',
+                                        dataValueField: 'Id',
+                                      }
+                                    );
+                                  });
+                                </script>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>
+                                <div
+                                  id="divPaisObligatorio"
+                                  class="mensajeCampoObligatorio"
+                                  style="display: none"
+                                ></div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>
+                                <strong
+                                  ><font style="vertical-align: inherit"
+                                    ><font style="vertical-align: inherit"
+                                      >Birthdate
+                                    </font></font
+                                  ><span class="required"
+                                    ><font style="vertical-align: inherit"
+                                      ><font style="vertical-align: inherit"
+                                        >*</font
+                                      ></font
+                                    ></span
+                                  ></strong
+                                >
+                              </td>
+                              <td>
+                                <span
+                                  style="width: 100%"
+                                  class="k-widget k-datepicker k-header k-input"
+                                  ><span class="k-picker-wrap k-state-default"
+                                    ><input
+                                      autocomplete="off"
+                                      data-val="true"
+                                      data-val-date="El campo Fecha de Nacimiento debe ser una fecha."
+                                      data-val-required="El campo Fecha de Nacimiento es obligatorio"
+                                      id="FechaNacimiento"
+                                      name="FechaNacimiento"
+                                      onkeypress="return validaFormatoFecha(event)"
+                                      placeholder="YYYY/MM/DD"
+                                      style="width: 100%"
+                                      type="text"
+                                      data-role="datepicker"
+                                      class="k-input"
+                                      role="combobox"
+                                      aria-expanded="false"
+                                      aria-owns="FechaNacimiento_dateview"
+                                      aria-disabled="false"
+                                      required="" /><span
+                                      unselectable="on"
+                                      class="k-select"
+                                      aria-label="select"
+                                      role="button"
+                                      aria-controls="FechaNacimiento_dateview"
+                                      ><span
+                                        class="k-icon k-i-calendar"
+                                      ></span></span></span
+                                ></span>
+                                <script>
+                                  kendo.syncReady(function () {
+                                    jQuery('#FechaNacimiento').kendoDatePicker({
+                                      format: 'yyyy/MM/dd',
+                                      min: new Date(1900, 0, 1, 0, 0, 0, 0),
+                                      max: new Date(
+                                        2024,
+                                        7,
+                                        17,
+                                        1,
+                                        42,
+                                        48,
+                                        637
+                                      ),
+                                    });
+                                  });
+                                </script>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>
+                                <!-- <span class="field-validation-valid" data-valmsg-for="FechaNacimiento" data-valmsg-replace="true"></span>-->
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>&nbsp;</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div id="divInformacionVisa" style="display: none">
+                  <div class="titulos-fiel">
+                    <h4>
+                      <font style="vertical-align: inherit"
+                        ><font style="vertical-align: inherit"
+                          >&nbsp;&nbsp;Visa Information</font
+                        ></font
+                      >
+                    </h4>
+                  </div>
+
+                  <div align="center" class="borderInfo">
+                    <table style="width: 100%">
+                      <tbody>
+                        <tr>
+                          <td style="padding-left: 2vw" width="30%">
+                            <!-- Columna Nombres y Actividad -->
+                            <table style="border-spacing: 6px">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <strong
+                                      ><font style="vertical-align: inherit"
+                                        ><font style="vertical-align: inherit"
+                                          >Foreign:</font
+                                        ></font
+                                      ></strong
+                                    ><br />
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <strong
+                                      ><font style="vertical-align: inherit"
+                                        ><font style="vertical-align: inherit"
+                                          >Activity:</font
+                                        ></font
+                                      ></strong
+                                    ><br />
+                                  </td>
+                                </tr>
+                                <tr></tr>
+                                <tr>
+                                  <td>
+                                    <div
+                                      id="removDescarga"
+                                      style="display: none"
+                                    >
+                                      <input
+                                        class="k-textbox k-state-disabled"
+                                        disabled="disabled"
+                                        id="txt_RutaVisa"
+                                        name="txt_RutaVisa"
+                                        readonly="true"
+                                        style="width: 280px"
+                                      />
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td
+                            style="padding-left: 2vw; vertical-align: top"
+                            width="20%"
+                          >
+                            <br />
+                            <strong
+                              ><font style="vertical-align: inherit"
+                                ><font style="vertical-align: inherit"
+                                  >Visa status:</font
+                                ></font
+                              ></strong
+                            ><br />
+                            <div id="divColorRojo" style="display: none">
+                              &nbsp;<img
+                                src="{{url_for('static', filename='MREMH_files/circleRed.png')}}"
+                              />
+                            </div>
+                            <div id="divColorVerde" style="display: none">
+                              &nbsp;<img
+                                src="{{url_for('static', filename='MREMH_files/circleGreen.png')}}"
+                              />
+                            </div>
+                          </td>
+                          <td
+                            align="right"
+                            width="50%"
+                            style="padding-right: 2vw"
+                          >
+                            <!-- Columna Estado Visa, Ver Documento y Fotografia. -->
+                            <table style="border-spacing: 6px">
+                              <tbody>
+                                <tr>
+                                  <td style="text-align: right" width="75%">
+                                    <div>
+                                      <br />
+                                      <div
+                                        id="divDescarga"
+                                        style="display: none"
+                                      >
+                                        <button
+                                          class="buttonDescarga k-button"
+                                          id="btnDescarga"
+                                          title="View Document"
+                                          type="button"
+                                          data-role="button"
+                                          role="button"
+                                          aria-disabled="false"
+                                          tabindex="0"
+                                        >
+                                          <font style="vertical-align: inherit"
+                                            ><font
+                                              style="vertical-align: inherit"
+                                              >View Document</font
+                                            ></font
+                                          >
+                                        </button>
+                                        <script>
+                                          kendo.syncReady(function () {
+                                            jQuery('#btnDescarga').kendoButton({
+                                              click: fncDescargaVisa,
+                                            });
+                                          });
+                                        </script>
+                                      </div>
+                                      <div
+                                        id="divSnDescarga"
+                                        style="
+                                          display: none;
+                                          font-size: 14px;
+                                          font-weight: bold;
+                                          color: #ff0000;
+                                          text-decoration: #8b0000 underline;
+                                          font-style: italic;
+                                        "
+                                      >
+                                        <label class="required"
+                                          ><font style="vertical-align: inherit"
+                                            ><font
+                                              style="vertical-align: inherit"
+                                              >There is no associated electronic
+                                              document</font
+                                            ></font
+                                          ></label
+                                        >
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td style="text-align: right" width="25%">
+                                    <div style="width: 50%; padding-left: 2vw">
+                                      <img
+                                        id="img_fotografia"
+                                        style="width: 100px; height: 110px"
+                                        src="{{url_for('static', filename='MREMH_files/saved_resource')}}"
+                                      />
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div align="center" style="width: 100%">
+                  <button
+                    id="btnBuscarVisa"
+                    title="Consult"
+                    type="submit"
+                    data-role="button"
+                    class="k-button"
+                    role="button"
+                    aria-disabled="false"
+                    tabindex="0"
+                  >
+                    <font style="vertical-align: inherit"
+                      ><font style="vertical-align: inherit"
+                        >Consult</font
+                      ></font
+                    >
+                  </button>
+                  <script>
+                    kendo.syncReady(function () {
+                      jQuery('#btnBuscarVisa').kendoButton({});
+                    });
+                  </script>
+
+                  <button
+                    id="btnNuevaBusqueda"
+                    title="New search"
+                    type="button"
+                    data-role="button"
+                    class="k-button"
+                    role="button"
+                    aria-disabled="false"
+                    tabindex="0"
+                  >
+                    <font style="vertical-align: inherit"
+                      ><font style="vertical-align: inherit"
+                        >New search</font
+                      ></font
+                    >
+                  </button>
+                  <script>
+                    kendo.syncReady(function () {
+                      jQuery('#btnNuevaBusqueda').kendoButton({
+                        click: nuevaBusquedaValidacionVisa,
+                      });
+                    });
+                  </script>
+                </div>
+              </form>
+              {% if visa %}
+              <h2>Visa Information</h2>
+              <p>Place of Issue: {{ visa.place_of_issue }}</p>
+              <p>Valid From: {{ visa.valid_from }}</p>
+              <p>Valid Until: {{ visa.valid_until }}</p>
+              <p>Document No: {{ visa.document_no }}</p>
+              <p>Full Name: {{ visa.fullName }}</p>
+              <p>Passport No: {{ visa.passportNo }}</p>
+              <p>Sex: {{ visa.sex }}</p>
+              <p>Birth Date: {{ visa.birth_date }}</p>
+              <p>Nationality: {{ visa.nationality }}</p>
+              <form method="post" action="/download_visa">
+                <input
+                  type="hidden"
+                  name="passportNo"
+                  value="{{ visa.passportNo }}"
+                />
+                <button type="submit">Download Visa</button>
+              </form>
+              {% elif passportNo %}
+              <p>Visa not found</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <div id="divNotificacion">
+            <span
+              id="notificacion"
+              data-role="notification"
+              style="display: none"
+            ></span>
+            <script>
+              kendo.syncReady(function () {
+                jQuery('#notificacion').kendoNotification({
+                  position: { right: 200, top: 300 },
+                  stacking: 'down',
+                  allowHideAfter: 1000,
+                });
+              });
+            </script>
+          </div>
+
+          <div id="divVerDocumento">
+            <script>
+              kendo.syncReady(function () {
+                jQuery('#verDocumento').kendoWindow({
+                  modal: true,
+                  iframe: false,
+                  draggable: true,
+                  scrollable: true,
+                  pinned: false,
+                  title: 'Documento Firmado Electronicamente',
+                  resizable: false,
+                  width: 580,
+                  height: 560,
+                  actions: ['Close'],
+                });
+              });
+            </script>
+          </div>
+
+          <div id="idInformativoCodigoVerificacion">
+            <script>
+              kendo.syncReady(function () {
+                jQuery('#divAyuda').kendoTooltip({
+                  filter: 'a',
+                  position: 'top',
+                  width: 120,
+                  content:
+                    'El Código de Verificación se encuentra en la bandeja de entrada del correo electrónico del extranjero, quien es el único responsable de otorgar su código para validar la Visa Electrónica.',
+                });
+              });
+            </script>
+          </div>
+
+          <script>
+            $('document').ready(function () {
+              $('#aTerminos').html($('#hidTerminos').val());
+              $('#tdTitulo').html($('#hidNombreSistema').val());
+
+              var notification = $('#notificacion').data('kendoNotification');
+              var pasaporte = $('#NumeroPasaporte').val();
+              var nacionalidad = $('#IdNacionalidad')
+                .data('kendoDropDownList')
+                .value();
+              var fechaNacimiento = $('#FechaNacimiento')
+                .data('kendoDatePicker')
+                .value();
+
+              $('#NumeroPasaporte').prop('required', 'true');
+              $('#IdNacionalidad').prop('required', 'true');
+              $('#FechaNacimiento').prop('required', 'true');
+              $('#CodigoVerificacion').prop('required', 'true');
+
+              $('#divPaisObligatorio').hide();
+
+              $('#NumeroPasaporte').on({
+                invalid: function (e) {
+                  e.target.setCustomValidity('');
+                  if (!e.target.validity.valid) {
+                    e.target.setCustomValidity(
+                      'El campo N&#250;mero Pasaporte / Identidad es obligatorio'
+                        .replace('&#225;', 'á')
+                        .replace('&#233;', 'é')
+                        .replace('&#237;', 'í')
+                        .replace('&#243;', 'ó')
+                        .replace('&#250;', 'ú')
+                        .replace('&#193;', 'Á')
+                        .replace('&#201;', 'É')
+                        .replace('&#205;', 'Í')
+                        .replace('&#211;', 'Ó')
+                        .replace('&#218;', 'Ú')
+                        .replace('&#241;', 'ñ')
+                        .replace('&#209;', 'Ñ')
+                        .replace('&#39;', "'")
+                    );
+                  }
+                },
+                input: function (e) {
+                  e.target.setCustomValidity('');
+                },
+              });
+
+              $('#IdNacionalidad').on({
+                invalid: function (e) {
+                  e.target.setCustomValidity('');
+                  if (!e.target.validity.valid) {
+                    e.target.setCustomValidity(
+                      'El campo Pa&#237;s es obligatorio'
+                        .replace('&#225;', 'á')
+                        .replace('&#233;', 'é')
+                        .replace('&#237;', 'í')
+                        .replace('&#243;', 'ó')
+                        .replace('&#250;', 'ú')
+                        .replace('&#193;', 'Á')
+                        .replace('&#201;', 'É')
+                        .replace('&#205;', 'Í')
+                        .replace('&#211;', 'Ó')
+                        .replace('&#218;', 'Ú')
+                        .replace('&#241;', 'ñ')
+                        .replace('&#209;', 'Ñ')
+                    );
+                  }
+                },
+                input: function (e) {
+                  e.target.setCustomValidity('');
+                },
+              });
+
+              $('#FechaNacimiento').on({
+                invalid: function (e) {
+                  e.target.setCustomValidity('');
+                  if (!e.target.validity.valid) {
+                    e.target.setCustomValidity(
+                      'El campo Fecha de Nacimiento es obligatorio'
+                        .replace('&#225;', 'á')
+                        .replace('&#233;', 'é')
+                        .replace('&#237;', 'í')
+                        .replace('&#243;', 'ó')
+                        .replace('&#250;', 'ú')
+                        .replace('&#193;', 'Á')
+                        .replace('&#201;', 'É')
+                        .replace('&#205;', 'Í')
+                        .replace('&#211;', 'Ó')
+                        .replace('&#218;', 'Ú')
+                        .replace('&#241;', 'ñ')
+                        .replace('&#209;', 'Ñ')
+                    );
+                  }
+                },
+                input: function (e) {
+                  e.target.setCustomValidity('');
+                },
+              });
+
+              $('#CodigoVerificacion').on({
+                invalid: function (e) {
+                  e.target.setCustomValidity('');
+                  if (!e.target.validity.valid) {
+                    e.target.setCustomValidity(
+                      'El campo C&#243;digo de verificaci\u00F3n es obligatorio'
+                        .replace('&#225;', 'á')
+                        .replace('&#233;', 'é')
+                        .replace('&#237;', 'í')
+                        .replace('&#243;', 'ó')
+                        .replace('&#250;', 'ú')
+                        .replace('&#193;', 'Á')
+                        .replace('&#201;', 'É')
+                        .replace('&#205;', 'Í')
+                        .replace('&#211;', 'Ó')
+                        .replace('&#218;', 'Ú')
+                        .replace('&#241;', 'ñ')
+                        .replace('&#209;', 'Ñ')
+                    );
+                  }
+                },
+                input: function (e) {
+                  e.target.setCustomValidity('');
+                },
+              });
+
+              var codigoVerificacion = $('#CodigoVerificacion').val();
+
+              if (
+                pasaporte.trim() === '' ||
+                nacionalidad === '0' ||
+                fechaNacimiento === null ||
+                codigoVerificacion === ''
+              ) {
+                $('#NumeroPasaporte').attr(
+                  'data-val-required',
+                  'El campo N&#250;mero Pasaporte / Identidad es obligatorio'
+                );
+                $('#IdNacionalidad').attr(
+                  'data-val-required',
+                  'El campo Pa&#237;s es obligatorio'
+                );
+                $('#FechaNacimiento').attr(
+                  'data-val-required',
+                  'El campo Fecha de Nacimiento es obligatorio'
+                );
+                $('#CodigoVerificacion').attr(
+                  'data-val-required',
+                  'El campo C&#243;digo de verificaci\u00F3n es obligatorio'
+                );
+
+                if (0 == -3) {
+                  //No selecciona el nombre de país.
+
+                  $('#divPaisObligatorio').html(
+                    'El campo Pa&#237;s es obligatorio'
+                  );
+                  $('#divPaisObligatorio').show();
+                }
+
+                return null;
+              }
+
+              if (0 == 1) {
+                //Ingresa si el resultado del captcha no es correcto.
+                notification.show(
+                  'Las letras no coinciden con la imagen',
+                  'error'
+                );
+                return null;
+              } else {
+                if (0 == -2) {
+                  //No se ingresó código de verificación.
+
+                  limpiarCamposValidacionVisa();
+                  notification.show(
+                    'Digite el c&#243;digo de verificaci&#243;n',
+                    'error'
+                  );
+                  return null;
+                } else if (0 == 1 && 0 == 1) {
+                  //Oculta el botón Consultar
+                  $('#btnBuscarVisa').hide();
+
+                  //Oculta div de la sección captcha
+                  var divCodigoCaptcha =
+                    document.getElementById('divCodigoCaptcha');
+                  divCodigoCaptcha.style.display = 'none';
+
+                  //Muestra div de los datos de la visa
+                  var divInfoVisa =
+                    document.getElementById('divInformacionVisa');
+                  divInfoVisa.style.display = '';
+
+                  $('#img_fotografia').attr(
+                    'src',
+                    'data:image/png;base64,' + ''
+                  );
+
+                  if ('' == 'SI') {
+                    var divDescarga = document.getElementById('divDescarga');
+                    divDescarga.style.display = 'block';
+                  }
+
+                  if ('' == 'NO') {
+                    var divSnDescarga =
+                      document.getElementById('divSnDescarga');
+                    divSnDescarga.style.display = 'block';
+                  }
+
+                  if ('' == 'VISA EMITIDA') {
+                    document.getElementById('divColorVerde').style.display =
+                      'block';
+                    document.getElementById('divColorRojo').style.display =
+                      'none';
+                  } else {
+                    document.getElementById('divColorVerde').style.display =
+                      'none';
+                    document.getElementById('divColorRojo').style.display =
+                      'block';
+                  }
+
+                  window.parent.$('#txt_DocumentoRuta').val('');
+                } else if (0 == 1 && 0 == 0) {
+                  limpiarCamposValidacionVisa();
+                  notification.show(
+                    'El c&#243;digo de verificaci&#243;n es incorrecto',
+                    'error'
+                  );
+                  return null;
+                } else if (0 == -1 && 0 == 0) {
+                  limpiarCamposValidacionVisa();
+                  notification.show(
+                    'No existe informaci&#243;n de la visa, aseg&#250;rese que los datos de consulta sean v&#225;lidos.',
+                    'error'
+                  );
+
+                  return null;
+                } else if (0 == -2) {
+                  notification.show('Los datos han sido adulterados', 'error');
+                  return null;
+                }
+              }
+
+              return null;
+            });
+          </script>
+        </div>
+      </div>
+      <div style="height: 1vh; min-height: 1vh">
+        <table style="width: 100%; height: 100%; border-spacing: 0; border: 0">
+          <tbody>
+            <tr>
+              <td width="50%" style="background-color: #ffce00"></td>
+              <td width="25%" style="background-color: #0055b8"></td>
+              <td width="25%" style="background-color: #e31f1a"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background-color: #002041; height: 8vh; min-height: 8vh">
+        <table style="width: 100%; height: 100%; border-spacing: 0; border: 0">
+          <tbody>
+            <tr>
+              <td class="text-left">
+                <div id="divTerminos" name="divTerminos">
+                  <a
+                    id="aTerminos"
+                    name="aTerminos"
+                    href="javascript: TerminosCondiciones()"
+                    >Términos y Condiciones</a
+                  >
+                </div>
+              </td>
+              <td class="text-right">
+                <div id="divSocialIcons">
+                  <a
+                    style="cursor: pointer"
+                    onclick="window.open(&#39;http://www.flickr.com/photos/dgcomsoc/albums&#39;, &#39;_blank&#39;)"
+                  >
+                    <img
+                      src="{{url_for('static', filename='MREMH_files/logo_flickr.png')}}"
+                    />
+                  </a>
+                  <a
+                    style="cursor: pointer"
+                    onclick="window.open(&#39;http://www.youtube.com/user/CancilleriaEcuador&#39;, &#39;_blank&#39;)"
+                  >
+                    <img
+                      src="{{url_for('static', filename='MREMH_files/logo_youtube.png')}}"
+                    />
+                  </a>
+                  <a
+                    style="cursor: pointer"
+                    onclick="window.open(&#39;https://www.facebook.com/cancilleriaecuador&#39;, &#39;_blank&#39;)"
+                  >
+                    <img
+                      src="{{url_for('static', filename='MREMH_files/logo_facebook.png')}}"
+                    />
+                  </a>
+                  <a
+                    style="cursor: pointer"
+                    onclick="window.open(&#39;http://twitter.com/cancilleriaec&#39;, &#39;_blank&#39;)"
+                  >
+                    <img
+                      src="{{url_for('static', filename='MREMH_files/logo_twiter.png')}}"
+                    />
+                  </a>
+                </div>
+                <div style="margin-top: 11vh">
+                  <img
+                    src="{{url_for('static', filename='MREMH_files/barra_tricolor.png')}}"
+                    style="width: 100%; height: 1vh"
+                    align="right"
+                  />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="{{url_for('static', filename='MREMH_files/bootstrap')}}"></script>
+
+    <div
+      id="goog-gt-tt"
+      class="VIpgJd-yAWNEb-L7lbkb skiptranslate"
+      style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;"
+      data-id=""
+    ></div>
+    <script type="text/javascript">
+      // LLAMADOS A PANTALLAS
+      function PaginaInicial() {
+        $('#divBody').load('/MenuServicios');
+      }
+
+      function TerminosCondiciones() {
+        $('#divBody').load('/TerminosCondicion');
+      }
+
+      function ValidacionVisa() {
+        $('#divBody').load('/ValidacionVisa');
+      }
+
+      function ValidacionApostilla() {
+        $('#divBody').load('/ValidacionApostilla');
+      }
+
+      function ValidacionNotarial() {
+        $('#divBody').load('/ValidacionNotarial');
+      }
+
+      function ValidacionPasaporte() {
+        $('#divBody').load('/ValidacionPasaporte');
+      }
+
+      function ValidacionSolNaturalizacion() {
+        $('#divBody').load('/ValidacionSolNaturalizacion');
+      }
+
+      // CAMBIO DE IDIOMA
+      function cambiarIdiomaTerminosCondicion(parIdioma) {
+        $('#divBody').load(
+          'https://serviciosciudadanos.cancilleria.gob.ec/TerminosCondicion/Idioma?id=' +
+            parIdioma
+        );
+      }
+
+      function cambiarIdiomaValidacionVisa(parIdioma) {
+        $('#divBody').load(
+          'https://serviciosciudadanos.cancilleria.gob.ec/ValidacionVisa/Idioma?id=' +
+            parIdioma
+        );
+      }
+
+      function cambiarIdiomaValidacionApostilla(parIdioma) {
+        $('#divBody').load(
+          'https://serviciosciudadanos.cancilleria.gob.ec/ValidacionApostilla/Idioma?id=' +
+            parIdioma
+        );
+      }
+
+      function cambiarIdiomaValidacionApostillaURL(parIdioma) {
+        $('#divBody').load(
+          'https://serviciosciudadanos.cancilleria.gob.ec/ValidacionApostillaURL/Idioma?id=' +
+            parIdioma
+        );
+      }
+
+      function cambiarIdiomaValidacionNotarial(parIdioma) {
+        $('#divBody').load(
+          'https://serviciosciudadanos.cancilleria.gob.ec/ValidacionNotarial/Idioma?id=' +
+            parIdioma
+        );
+      }
+
+      function cambiarIdiomaValidacionPasaporte(parIdioma) {
+        $('#divBody').load(
+          'https://serviciosciudadanos.cancilleria.gob.ec/ValidacionPasaporte/Idioma?id=' +
+            parIdioma
+        );
+      }
+
+      function cambiarIdiomaValidacionSolNaturalizacion(parIdioma) {
+        $('#divBody').load(
+          'https://serviciosciudadanos.cancilleria.gob.ec/ValidacionSolNaturalizacion/Idioma?id=' +
+            parIdioma
+        );
+      }
+
+      function cambiarIdiomaMenuServicios(parIdioma) {
+        $('#divBody').load(
+          'https://serviciosciudadanos.cancilleria.gob.ec/MenuServicios/Idioma?id=' +
+            parIdioma
+        );
+      }
+
+      // LIMPIAR CAMPOS
+      function limpiarCamposValidacionVisa() {
+        $('#txt_NombresCompletos').val('');
+        $('#txt_Actividad').val('');
+        $('#txt_Estado').val('');
+        $('#img_fotografia').attr('src', '');
+      }
+
+      function limpiarCamposValidacionApostilla() {
+        $('#txt_NumeroEspecie').val('');
+        $('#txt_FechaAsignacion').val('');
+        $('#txt_TipoActoConsular').val('');
+        $('#txt_Documento').val('');
+        $('#txt_RutaDocument').val('');
+        $('#txt_RutaApostilla').val('');
+        $('#txt_Signatario').val('');
+        $('#txt_Cargo').val('');
+        $('#txt_Entidad').val('');
+      }
+
+      function limpiarCamposValidacionNotarial() {
+        $('#NumeroActoNotarial').val('');
+        $('#FechaDocumento').val('');
+        $('#CodigoVerificacion').val('');
+        $('#NombreActoConsular').val('');
+        $('#txt_RutaDocumento').val('');
+        $('#Signatario').val('');
+        $('#UnidadAdministrativa').val('');
+        $('#Solicitante').val('');
+        $('#DocumentoIdentidad').val('');
+      }
+
+      function limpiarCamposValidacionPasaporte() {
+        $('#DocumentoIdentidadBusqueda').val('');
+        $('#FechaEmisionBusqueda').val('');
+
+        limpiarDatosPasaporte();
+      }
+
+      function limpiarCamposValidacionSolNaturalizacion() {
+        $('#Solicitante').val('');
+        $('#FechaEmision').val('');
+        $('#UnidadAdministrativa').val('');
+      }
+
+      function limpiarDatosPasaporte() {
+        $('#DocumentoIdentidad').val('');
+        $('#FechaEmision').val('');
+        $('#PasaporteEmergente').val('');
+        $('#Signatario').val('');
+        $('#UnidadAdministrativa').val('');
+        $('#Solicitante').val('');
+        $('#txt_RutaPasaporte').val('');
+      }
+
+      // NUEVA BUSQUEDA
+      function nuevaBusquedaValidacionVisa() {
+        limpiarCamposValidacionVisa();
+        ValidacionVisa();
+      }
+
+      function nuevaBusquedaValidacionApostilla() {
+        limpiarCamposValidacionApostilla();
+        ValidacionApostilla();
+      }
+
+      function nuevaBusquedaValidacionDocumento() {
+        limpiarCamposValidacionNotarial();
+        ValidacionNotarial();
+      }
+
+      function nuevaBusquedaValidacionPasaporte() {
+        limpiarCamposValidacionPasaporte();
+        ValidacionPasaporte();
+      }
+
+      function nuevaBusquedaValidacionSolNaturalizacion() {
+        limpiarCamposValidacionSolNaturalizacion();
+        ValidacionSolNaturalizacion();
+      }
+
+      function salirValidacionPasaporte() {
+        $('#CodigoVerificacionBusqueda').val('');
+        window.location = '/';
+      }
+
+      // DESCARGA DOCUMENTOS
+      function fncDescargaVisa() {
+        var $documentoDescarga = $('#txt_RutaVisa').val();
+        var wnd = $('#verDocumento').data('kendoWindow');
+
+        wnd.refresh({
+          url: '/ServiciosInstitucionales/VerFormulario',
+          data: { ruta: $documentoDescarga },
+        });
+        wnd.center().center().open();
+      }
+
+      function fncDescargaDocumento() {
+        var $documentoDescarga = $('#txt_RutaDocumento').val();
+        var wnd = $('#verDocumento').data('kendoWindow');
+
+        wnd.refresh({
+          url: '/ServiciosInstitucionales/VerFormulario',
+          data: { ruta: $documentoDescarga },
+        });
+        wnd.center().center().open();
+      }
+
+      function fncDescargaApostilla() {
+        var $documentoDescarga = $('#txt_RutaApostilla').val();
+        var wnd = $('#verDocumento').data('kendoWindow');
+
+        wnd.refresh({
+          url: '/ServiciosInstitucionales/VerFormulario',
+          data: { ruta: $documentoDescarga },
+        });
+        wnd.center().center().open();
+      }
+
+      function fncDescargaPasaporte() {
+        var $documentoDescarga = $('#txt_RutaPasaporte').val();
+        var wnd = $('#verDocumento').data('kendoWindow');
+
+        wnd.refresh({
+          url: '/ServiciosInstitucionales/VerFormulario',
+          data: { ruta: $documentoDescarga },
+        });
+        wnd.center().center().open();
+      }
+
+      function fncDescargaDoble() {
+        var $documento1 = $('#txt_RutaApostilla').val();
+        var $documento2 = $('#txt_RutaDocumento').val();
+        var $nombreTipo = $('#nombreTipo').val();
+        var wnd = $('#verDocumentoDoble').data('kendoWindow');
+
+        wnd.refresh({
+          url: '/ServiciosInstitucionales/VerFormularioDosDocumentos',
+          data: {
+            ruta1: $documento1,
+            ruta2: $documento2,
+            nombreTipo: $nombreTipo,
+          },
+        });
+        wnd.center().center().open();
+      }
+
+      // PROCESOS VALIDACION VISAS
+      function mostrarTextoValidacionVisa() {
+        //Oculta div del botón mostrar texto
+        var divMostrarTexto = document.getElementById('divMostrarTexto');
+        divMostrarTexto.style.display = 'none';
+
+        //Muestra div del botón mostrar máscara
+        var divMostrarMascara = document.getElementById('divMostrarMascara');
+        divMostrarMascara.style.display = '';
+
+        $('#CodigoVerificacion').attr('type', 'text');
+      }
+
+      function mostrarMascaraValidacionVisa() {
+        //Muestra div del botón mostrar texto
+        var divMostrarTexto = document.getElementById('divMostrarTexto');
+        divMostrarTexto.style.display = '';
+
+        //Oculta div del botón mostrar máscara
+        var divMostrarMascara = document.getElementById('divMostrarMascara');
+        divMostrarMascara.style.display = 'none';
+
+        $('#CodigoVerificacion').attr('type', 'password');
+      }
+
+      // PROCESOS VALIDACION PASAPORTE
+      function mostrarTextoValidacionPasaporte() {
+        //Oculta div del botón mostrar texto
+        var divMostrarTexto = document.getElementById('divMostrarTexto');
+        divMostrarTexto.style.display = 'none';
+
+        //Muestra div del botón mostrar máscara
+        var divMostrarMascara = document.getElementById('divMostrarMascara');
+        divMostrarMascara.style.display = '';
+
+        $('#CodigoVerificacionBusqueda').attr('type', 'text');
+      }
+
+      function mostrarMascaraValidacionPasaporte() {
+        //Muestra div del botón mostrar texto
+        var divMostrarTexto = document.getElementById('divMostrarTexto');
+        divMostrarTexto.style.display = '';
+
+        //Oculta div del botón mostrar máscara
+        var divMostrarMascara = document.getElementById('divMostrarMascara');
+        divMostrarMascara.style.display = 'none';
+
+        $('#CodigoVerificacionBusqueda').attr('type', 'password');
+      }
+
+      // BLOQUEO PANTALLA
+      function loadingAction(mensaje) {
+        $.blockUI({
+          css: {
+            border: 'none',
+            padding: '20px',
+            backgroundColor: '#252c52',
+            '-webkit-border-radius': '10px',
+            '-moz-border-radius': '10px',
+            opacity: 1.2,
+            color: 'yellow',
+            'font-weight': 'bold',
+            'font-size': '30px',
+          },
+          message: mensaje,
+        });
+      }
+
+      //Solo permite ingresar números.
+      function soloNumeros(e) {
+        var tecla = document.all ? e.keyCode : e.which;
+
+        //Tecla de retroceso para borrar lo digitado cuando no sea número.
+        if (tecla == 8) {
+          return true;
+        }
+
+        // Patrón de entrada, en este caso solo acepta números.
+        var patron = /[0-9]/;
+        var teclaFinal = String.fromCharCode(tecla);
+        return patron.test(teclaFinal);
+      }
+
+      // VALIDACIONES GENERALES CAMPOS
+
+      function validaNumerosLetras(evt) {
+        // charCode: 8        equivale a RETROCESO
+        // charCode: 9        equivale a TAB
+        // charCode: 45       equivale a -
+        // charCode: 47       equivale a /
+        // charCode: 48 a 57  equivale del   0 al 9
+        // charCode: 65 a 90  equivale de la A la Z
+        // charCode: 97 a 122 equivale de la a la z
+        // charCode: 209      equivale a ñ
+        // charCode: 241      equivale a Ñ
+        var charCode = evt.which ? evt.which : evt.keyCode;
+        if (
+          charCode == 8 ||
+          charCode == 9 ||
+          charCode == 45 ||
+          charCode == 47 ||
+          (charCode >= 48 && charCode <= 57) ||
+          (charCode >= 65 && charCode <= 90) ||
+          (charCode >= 97 && charCode <= 122) ||
+          charCode == 209 ||
+          charCode == 241
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      // VALIDACIONES GENERALES CAMPOS
+
+      function validaNumerosLetrasSG(evt) {
+        // charCode: 8        equivale a RETROCESO
+        // charCode: 9        equivale a TAB
+        // charCode: 48 a 57  equivale del   0 al 9
+        // charCode: 65 a 90  equivale de la A la Z
+        // charCode: 97 a 122 equivale de la a la z
+        // charCode: 209      equivale a ñ
+        // charCode: 241      equivale a Ñ
+        var charCode = evt.which ? evt.which : evt.keyCode;
+        if (
+          charCode == 8 ||
+          charCode == 9 ||
+          (charCode >= 48 && charCode <= 57) ||
+          (charCode >= 65 && charCode <= 90) ||
+          (charCode >= 97 && charCode <= 122) ||
+          charCode == 209 ||
+          charCode == 241
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function validaFormatoFecha(evt) {
+        // charCode: 8        equivale a RETROCESO
+        // charCode: 9        equivale a TAB
+        // charCode: 47       equivale a /
+        // charCode: 48 a 57  equivale del   0 al 9
+        var charCode = evt.which ? evt.which : evt.keyCode;
+        if (
+          charCode == 8 ||
+          charCode == 9 ||
+          charCode == 47 ||
+          (charCode >= 48 && charCode <= 57)
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      //Utilizado para impedir la digitación en los campos tipo fecha. Componente DatePickerFor.
+      function sinTexto(e) {
+        e.preventDefault();
+      }
+
+      function ocultarMsgCampoObligatorio() {
+        $('#divPaisObligatorio').html('');
+        $('#divPaisObligatorio').hide();
+      }
+
+      //Función que toma el texto del combo y lo almacena en una variable oculta.
+      function setearNombrePaisDeOrigen() {
+        ocultarMsgCampoObligatorio();
+
+        var paisDeOrigen = $('#IdPaisDeOrigen')
+          .data('kendoDropDownList')
+          .text();
+        $('#PaisDeOrigen').val(paisDeOrigen);
+      }
+    </script>
+    <div
+      class="k-list-container k-popup k-group k-reset"
+      id="IdNacionalidad-list"
+      data-role="popup"
+      aria-hidden="true"
+      style="display: none; position: absolute"
+    >
+      <span class="k-list-filter"
+        ><input
+          class="k-textbox"
+          role="listbox"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-owns="IdNacionalidad_listbox"
+          tabindex="0"
+          aria-disabled="false"
+          aria-activedescendant="5834f0d2-1dcc-48a6-8006-b18124b5dfcd" /><span
+          class="k-icon k-i-zoom"
+        ></span
+      ></span>
+      <div class="k-group-header" style="display: none"></div>
+      <div class="k-list-scroller" unselectable="on">
+        <ul
+          unselectable="on"
+          class="k-list k-reset"
+          tabindex="-1"
+          aria-hidden="true"
+          id="IdNacionalidad_listbox"
+          aria-live="polite"
+          data-role="staticlist"
+          role="listbox"
+        >
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item k-state-selected k-state-focused"
+            aria-selected="true"
+            data-offset-index="0"
+            id="5834f0d2-1dcc-48a6-8006-b18124b5dfcd"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">-- Select --</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="1"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">AFGHANISTAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="2"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ALBANIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="3"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GERMANY</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="4"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ANDORRA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="5"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ANGOLA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="6"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >ANTIGUA AND BARBUDA</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="7"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">STATELESS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="8"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SAUDI ARABIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="9"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ALGERIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="10"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ARGENTINA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="11"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ARMENIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="12"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">AUSTRALIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="13"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">AUSTRIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="14"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">AZERBAIJAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="15"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BAHAMAS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="16"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BAHRAIN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="17"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BANGLADESH</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="18"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BARBADOS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="19"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BELARUS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="20"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BELGIUM</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="21"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BELIZE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="22"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BENIN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="23"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BERMUDA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="24"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BOLIVIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="25"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >BOSNIA AND HERZEGOVINA</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="26"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BOTSWANA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="27"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BRAZIL</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="28"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BRUNEI</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="29"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BULGARIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="30"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BURKINA FASO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="31"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BURUNDI</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="32"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">BHUTAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="33"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CAPE VERDE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="34"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CAMBODIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="35"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CAMEROON</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="36"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CANADA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="37"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CHAD</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="38"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CHILI</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="39"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CHINA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="40"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CYPRUS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="41"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">COLOMBIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="42"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">COMOROS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="43"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">KOREA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="44"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NORTH KOREA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="45"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SOUTH KOREA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="46"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">IVORY COAST</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="47"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">COSTA RICA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="48"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CROATIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="49"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CUBA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="50"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">DENMARK</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="51"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">DJIBOUTI</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="52"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">DOMINICA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="53"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">EGYPT</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="54"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">THE SAVIOUR</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="55"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >UNITED ARAB EMIRATES</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="56"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ERITREA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="57"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SCOTLAND</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="58"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SLOVAKIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="59"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SLOVENIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="60"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SPAIN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="61"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >STATE OF PALESTINE</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="62"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >UNITED STATES OF AMERICA</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="63"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ESTONIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="64"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ETHIOPIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="65"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">FIJI</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="66"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">PHILIPPINES</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="67"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">FINLAND</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="68"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">FRANCE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="69"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GABON</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="70"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GAMBIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="71"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GEORGIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="72"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GHANA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="73"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GREAT BRITAIN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="74"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GRENADE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="75"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GREECE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="76"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GUATEMALA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="77"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GUINEA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="78"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GUINEA BISSAU</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="79"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >EQUATORIAL GUINEA</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="80"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">GUYANA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="81"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">FRENCH GUIANA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="82"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">HAITI</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="83"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">HONDURAS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="84"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">HUNGARY</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="85"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">INDEFINITE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="86"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">INDIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="87"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">INDONESIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="88"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">IRAQ</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="89"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">IRAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="90"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">IRELAND</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="91"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >MAURITIUS ISLAND</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="92"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ICELAND</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="93"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CAYMAN ISLANDS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="94"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >MARSHALL ISLANDS</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="95"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >SOLOMON ISLANDS</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="96"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ISRAEL</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="97"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ITALY</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="98"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">JAMAICA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="99"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">JAPAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="100"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">JORDAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="101"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">KAZAKHSTAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="102"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">KENYA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="103"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">KENYA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="104"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">KYRGYZSTAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="105"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">KIRIBATI</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="106"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">KOSOVO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="107"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">KUWAIT</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="108"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">LAOS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="109"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">LESOTHO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="110"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">LATVIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="111"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">LEBANON</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="112"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">LIBERIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="113"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">LIBYA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="114"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">LIECHTENSTEIN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="115"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">LITHUANIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="116"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">LUXEMBOURG</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="117"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MACEDONIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="118"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MADAGASCAR</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="119"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MALAYSIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="120"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MALAWI</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="121"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MALDIVES</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="122"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MALI</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="123"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MALTA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="124"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MOROCCO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="125"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MAURITIUS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="126"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MAURITANIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="127"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MEXICO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="128"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MICRONESIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="129"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MOLDOVA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="130"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MONACO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="131"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MONGOLIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="132"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MONTENEGRO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="133"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MOZAMBIQUE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="134"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">MYANMAR</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="135"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NAMIBIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="136"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NAURU</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="137"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NEPAL</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="138"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NICARAGUA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="139"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NIGER</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="140"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NIGERIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="141"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NIUE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="142"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NORWAY</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="143"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NEW CALEDONIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="144"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NEW ZEALAND</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="145"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">OMAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="146"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">NETHERLANDS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="147"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">PAKISTAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="148"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">PALAU</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="149"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">PALESTINE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="150"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">PANAMA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="151"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >PAPUA NEW GUINEA</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="152"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">PARAGUAY</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="153"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">PERU</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="154"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">POLAND</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="155"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">PORTUGAL</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="156"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">PUERTO RICO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="157"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">QATAR</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="158"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SADR</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="159"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >KINGDOM OF BAHRAIN</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="160"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >SAHARAWI ARAB DEMOCRATIC REPUBLIC</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="161"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >CENTRAL AFRICAN REPUBLIC</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="162"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">CZECH REPUBLIC</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="163"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >REPUBLIC OF MACEDONIA</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="164"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >REPUBLIC OF MONTENEGRO</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="165"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >REPUBLIC OF CONGO</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="166"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >DEMOCRATIC REPUBLIC OF THE CONGO</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="167"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >DOMINICAN REPUBLIC</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="168"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">RWANDA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="169"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ROMANIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="170"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">RUSSIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="171"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">WESTERN SAHARA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="172"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SAMOA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="173"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >SAINT KITTS AND NEVIS</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="174"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SAN MARINO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="175"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >SAINT VINCENT AND THE GRENADINES</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="176"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SAINT LUCIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="177"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">HOLY SEE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="178"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >SAO TOME AND PRINCIPE</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="179"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SENEGAL</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="180"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SERBIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="181"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SEYCHELLES</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="182"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SIERRA LEONE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="183"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SINGAPORE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="184"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SYRIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="185"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SOMALIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="186"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SRI LANKA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="187"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SOUTH AFRICA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="188"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SUDAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="189"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SOUTH SUDAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="190"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SWEDEN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="191"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SWISS</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="192"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SURINAM</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="193"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">SWAZILAND</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="194"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">TADJIKISTAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="195"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">TADJIQUISTAO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="196"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">THAILAND</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="197"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">TAIWAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="198"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">TANZANIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="199"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">EAST TIMOR</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="200"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">TOGO</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="201"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">TONGA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="202"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit"
+                >Trinidad and Tobago</font
+              ></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="203"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">TUNISIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="204"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">TURKMENISTAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="205"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">TURKEY</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="206"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">TUVALU</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="207"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">UKRAINE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="208"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">UGANDA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="209"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">URUGUAY</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="210"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">UZBEKISTAN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="211"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">V</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="212"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">VANUATU</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="213"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">VENEZUELA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="214"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">VIETNAM</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="215"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">YEMEN</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="216"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">YUGOSLAVIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="217"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ZAMBIA</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="218"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ZIMBABWE</font></font
+            >
+          </li>
+          <li
+            tabindex="-1"
+            role="option"
+            unselectable="on"
+            class="k-item"
+            aria-selected="false"
+            data-offset-index="219"
+          >
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">ZUMBAHUE</font></font
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="k-nodata" style="display: none">
+        <div>
+          <font style="vertical-align: inherit"
+            ><font style="vertical-align: inherit">No data found.</font></font
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="k-calendar-container k-popup k-group k-reset"
+      id="FechaNacimiento_dateview"
+      data-role="popup"
+      style="display: none; position: absolute"
+    ></div>
+    <div
+      class="k-widget k-window"
+      style="
+        padding-top: 34px;
+        min-width: 90px;
+        min-height: 50px;
+        width: 580px;
+        height: 560px;
+        display: none;
+        top: 0px;
+        left: 0px;
+      "
+      data-role="draggable"
+    >
+      <div class="k-window-titlebar k-header" style="margin-top: -34px">
+        &nbsp;<span class="k-window-title" id="verDocumento_wnd_title"
+          ><font style="vertical-align: inherit"
+            ><font style="vertical-align: inherit"
+              >Electronically Signed Document</font
+            ></font
+          ></span
+        >
+        <div class="k-window-actions">
+          <a
+            role="button"
+            href="https://serviciosciudadanos.cancilleria.gob.ec/#"
+            class="k-button k-bare k-button-icon k-window-action"
+            aria-label="Close"
+            ><span class="k-icon k-i-close"></span
+          ></a>
+        </div>
+      </div>
+      <div
+        id="verDocumento"
+        style="visibility: visible; display: block"
+        data-role="window"
+        class="k-window-content k-content"
+        role="dialog"
+        aria-labelledby="verDocumento_wnd_title"
+        tabindex="0"
+      ></div>
+    </div>
+    <div
+      class="k-list-container k-popup k-group k-reset"
+      id="IdNacionalidad-list"
+      data-role="popup"
+      aria-hidden="true"
+      style="display: none; position: absolute"
+    >
+      <span class="k-list-filter"
+        ><input
+          class="k-textbox"
+          role="listbox"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-owns="IdNacionalidad_listbox"
+          tabindex="0"
+          aria-disabled="false" /><span class="k-icon k-i-zoom"></span
+      ></span>
+      <div class="k-group-header" style="display: none"></div>
+      <div class="k-list-scroller" unselectable="on">
+        <ul
+          unselectable="on"
+          class="k-list k-reset"
+          tabindex="-1"
+          aria-hidden="true"
+          id="IdNacionalidad_listbox"
+          aria-live="polite"
+          data-role="staticlist"
+          role="listbox"
+        ></ul>
+      </div>
+      <div class="k-nodata" style="display: none"><div></div></div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="k-calendar-container k-popup k-group k-reset"
+      id="FechaNacimiento_dateview"
+      data-role="popup"
+      style="display: none; position: absolute"
+    ></div>
   </body>
 </html>

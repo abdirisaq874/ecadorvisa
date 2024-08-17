@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Verify Visa</title>
+  </head>
+  <body>
+    <h1>Verify Visa</h1>
+    <form method="get" action="/">
+      <label>Enter Passport Number:</label><br />
+      <input type="text" name="passportNo" required /><br />
+      <button type="submit">Search</button>
+    </form>
+    {% if visa %}
+    <h2>Visa Information</h2>
+    <p>Place of Issue: {{ visa.place_of_issue }}</p>
+    <p>Valid From: {{ visa.valid_from }}</p>
+    <p>Valid Until: {{ visa.valid_until }}</p>
+    <p>Document No: {{ visa.document_no }}</p>
+    <p>Full Name: {{ visa.fullName }}</p>
+    <p>Passport No: {{ visa.passportNo }}</p>
+    <p>Sex: {{ visa.sex }}</p>
+    <p>Birth Date: {{ visa.birth_date }}</p>
+    <p>Nationality: {{ visa.nationality }}</p>
+    <form method="post" action="/download_visa">
+      <input type="hidden" name="passportNo" value="{{ visa.passportNo }}" />
+      <button type="submit">Download Visa</button>
+    </form>
+    {% elif passportNo %}
+    <p>Visa not found</p>
+    {% endif %}
+  </body>
+</html>
